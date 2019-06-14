@@ -1,0 +1,183 @@
+.profile-cards {
+    width: 100%;
+}
+
+.profile-card {
+    width: 100%;
+    height: 100%;
+}
+
+
+.profile-body {
+    padding: 14px;
+}
+
+.btn-primary {
+    background-color: #6f42c1;
+}
+
+.hide{
+    display: none !important;
+}
+
+.profile-avatar {
+    height: 400px;
+    width: 800px;
+    background-color: purple;
+    margin-left: 30px;
+}
+
+
+#profile-sponsorship .cover {
+    text-align: center;
+    position: relative;
+}
+#profile-sponsorship  .cover .description {
+    text-align: left;
+    background-color: #9d92b0;
+    color: #f8f9fa;
+    padding: 20px;
+}
+#profile-sponsorship  .cover .btn-holder {
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 0px 10px 0px;
+}
+#profile-sponsorship  .sort .dropdown-holder {
+    float: right;
+    padding: 50px;
+}
+
+#profile-sponsorship  .cover .btn-holder .col{
+    padding: 10px 0px 10px 0px;
+    margin: 0px 10px 0px 10px;
+}
+
+#profile-sponsorship  .gicons-parent {
+position: absolute;
+bottom: 0;
+right: 20px;
+}
+
+#profile-sponsorship  .gicons {
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    font-size: 22px;
+    color: white;
+}
+
+#profile-sponsorship  .sponsorship-profile .user-img {
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+#profile-sponsorship  .infinite-container .img{
+
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+    width: 150px;
+}
+#profile-sponsorship  .infinite-container .name{
+    text-align: left;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+    max-width: 100px;
+    color: #f8f9fa;
+}
+#profile-sponsorship  .infinite-container .not-name{
+    float:right;
+    display: inline-block;
+    margin-right: 30px;
+    vertical-align: middle;
+    max-width: 100px;
+    color: #f8f9fa;
+}
+
+#profile-sponsorship  .not-name {
+    color:white;
+}
+
+#profile-sponsorship  .stat {
+    margin-top: 20px;
+    text-align: center;
+    padding: 50px 25px 50px 25px;
+    vertical-align: middle;
+    background-color: #9d92b0;
+    color: #f8f9fa;
+    font-size: x-large;
+}
+#profile-sponsorship  .sponsorship-profile .text {
+    text-align: left;
+    color: #f8f9fa;
+    background-color: #9d92b0;
+    padding: 10px 10px 10px 10px;
+}
+#profile-sponsorship  .sponsorship-profile .user-name {
+    display: inline-block;
+    color: white;
+}
+#profile-sponsorship  .sponsorship-profile .user-img img {
+    max-width: 150px;
+}
+#profile-sponsorship  .container-box {
+    padding: 65px;
+    margin: 0px 23px 23px 23px;
+    background-color: #756790;
+}
+
+#profile-sponsorship  .input-group .custom-dropdown{
+    background-color: #f8f9fa;
+    color: black;
+    border-color: #f8f9fa;
+}
+
+
+#profile-sponsorship  .modal .modal-sponsor {
+    padding-top: 800px;
+    max-width: 800px;
+}
+
+#profile-sponsorship  .pagination-page-info {
+    margin: .5em;
+    margin-left: 0;
+    background: #9d92b0;
+    color: #f8f9fa;
+    width: 100%;
+    justify-content: center;
+}
+#profile-sponsorship  .pagination-page-info h3 {
+    text-align: center;
+    font-size: 15px;
+    margin: 5px;
+}
+#profile-sponsorship  .pagination-page-info {
+    height: 30px;
+}
+#profile-sponsorship  .left-head{
+    margin-right: 5px;
+    vertical-align: middle;
+}
+#profile-sponsorship  .right-head{
+    margin-right: 5px;
+    vertical-align: middle;
+    text-align: right;
+}
+#profile-sponsorship  .card-title {
+    color:#f8f9fa;
+}
+#profile-sponsorship  .dataTables_filter{
+    display: none;
+}
+#profile-sponsorship  .dataTables_length{
+    display: none;
+}
+#profile-sponsorship  .dataTables_info{
+    display: none;
+}
+#profile-sponsorship  .dataTables_paginate{
+    display: none;
+}

@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7f6ff268-df9e-4f52-8574-e6ece66c999f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Desktop/Main/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Desktop/Main/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Desktop/Main/app/admin/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Desktop/Main/app/admin/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Desktop/Main/app/admin/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Desktop/Main/app/admin/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Desktop/Main/app/admin/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/Desktop/Main/app/admin/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Desktop/Main/app/admin/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Desktop/Main/app/admin/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Desktop/Main/app/admin/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Desktop/Main/app/admin/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Desktop/Main/app/api/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/Desktop/Main/app/api/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Desktop/Main/app/api/events.py" beforeDir="false" afterPath="$PROJECT_DIR$/Desktop/Main/app/api/events.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Desktop/Main/app/api/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Desktop/Main/app/api/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Desktop/Main/app/api/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Desktop/Main/app/api/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Desktop/Main/app/api/worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/Desktop/Main/app/api/worker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Desktop/Main/app/decorator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Desktop/Main/app/decorator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Desktop/Main/app/templates/admin/crafting.html" beforeDir="false" afterPath="$PROJECT_DIR$/Desktop/Main/app/templates/admin/crafting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Desktop/Main/app/templates/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Desktop/Main/app/templates/admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Desktop/Main/app/templates/admin/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/Desktop/Main/app/templates/admin/signin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Desktop/Main/app/templates/admin/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/Desktop/Main/app/templates/admin/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Desktop/Main/app/templates/api/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Desktop/Main/app/templates/api/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Desktop/Main/app/templates/api/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/Desktop/Main/app/templates/api/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Desktop/Main/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Desktop/Main/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Desktop/Main/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/Desktop/Main/run.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="main" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Desktop/Main/app/admin/routes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="216" column="114" selection-start-line="216" selection-start-column="114" selection-end-line="216" selection-end-column="114" />
+              <folding>
+                <element signature="e#0#57#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Desktop/Main/app/admin/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="339">
+              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>hist</find>
+      <find>Users</find>
+      <find>create_a</find>
+      <find>Total online</find>
+      <find>Vict</find>
+      <find>hom</find>
+      <find>Sign</find>
+      <find>error</find>
+      <find>col-</find>
+      <find>col-md-10</find>
+      <find>home</find>
+      <find>img</find>
+      <find>profile</find>
+      <find>api</find>
+      <find>gra</find>
+      <find>&lt;img class</find>
+      <find>Traf</find>
+      <find>craf</find>
+      <find>categories</find>
+      <find>item</find>
+      <find>match</find>
+      <find>pagination</find>
+      <find>Jewerly</find>
+      <find>Charms</find>
+      <find>Giftcards</find>
+      <find>Gems</find>
+      <find>return</find>
+      <find>return jsonify</find>
+      <find>print</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Desktop/Main/app/api/worker.py" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/api/events.py" />
+        <option value="$PROJECT_DIR$/Desktop/Main/as.py" />
+        <option value="$PROJECT_DIR$/Desktop/Main/requirements.txt" />
+        <option value="$USER_HOME$/anaconda3/lib/python3.6/site-packages/flask_cache/jinja2ext.py" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/api/forms.py" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/admin/admin.py" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/admin/__init__.py" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/admin/data.py" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/decorator.py" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/templates/api/index.html" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/api/data.py" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/templates/api/login.html" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/templates/api/signup.html" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/static/admin/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/templates/admin/signup.html" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/templates/admin/signin.html" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/api/routes.py" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/templates/api/profile.html" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/admin/tracker.py" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/templates/admin/index.html" />
+        <option value="$PROJECT_DIR$/Desktop/Main/track.py" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/admin/track.py" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/track.py" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/__init__.py" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/templates/admin/crafting.html" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/admin/faltu.py" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/admin/ad.py" />
+        <option value="$PROJECT_DIR$/Desktop/Main/run.py" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/admin/forms.py" />
+        <option value="$PROJECT_DIR$/Desktop/Main/app/admin/routes.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-22" />
+    <option name="y" value="142" />
+    <option name="width" value="740" />
+    <option name="height" value="513" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="main" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="main" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Desktop" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="main" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Desktop" type="462c0819:PsiDirectoryNode" />
+              <item name="Main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="main" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Desktop" type="462c0819:PsiDirectoryNode" />
+              <item name="Main" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="main" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Desktop" type="462c0819:PsiDirectoryNode" />
+              <item name="Main" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Desktop/Main/app" />
+      <recent name="$PROJECT_DIR$/Desktop/Main/app/admin" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="pytest for app.admin.routes.test3" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="main" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Desktop/Main" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;app.admin.routes.test3&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.pytest for app.admin.routes.test3" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7f6ff268-df9e-4f52-8574-e6ece66c999f" name="Default Changelist" comment="" />
+      <created>1559210638702</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1559210638702</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="pytest_for_app_admin_routes_test3 - 2019.06.03 at 12h 12m 17s.xml">
+      <configuration name="pytest for app.admin.routes.test3" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="25" width="1366" height="686" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.497307" visible="true" weight="0.23082651" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" sideWeight="0.502693" side_tool="true" weight="0.20029785" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32854578" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32854578" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32854578" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32854578" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5026061" side_tool="true" weight="0.78994614" />
+      <window_info anchor="bottom" id="Python Console" order="9" weight="0.8222621" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4973939" weight="0.8043088" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.497307" visible="true" weight="0.16604617" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" sideWeight="0.502693" side_tool="true" weight="0.20029785" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32854578" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32854578" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32854578" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="9" weight="0.8222621" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.53859967" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="setValue">
+      <expression>
+        <expression-string>101</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>85</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>15</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>9</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/templates/api/profile(notForm).html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="63" column="67" selection-start-line="63" selection-start-column="67" selection-end-line="63" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/templates/api/signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="58" column="40" selection-start-line="58" selection-start-column="40" selection-end-line="58" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/templates/api/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="87" column="53" selection-start-line="87" selection-start-column="53" selection-end-line="87" selection-end-column="53" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#1;n#form#0;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/templates/api/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="680" column="82" selection-start-line="680" selection-start-column="72" selection-end-line="680" selection-end-column="82" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#section#4;n#div#0;n#div#1;n#section#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/admin/tracker.py" />
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/api/worker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1406">
+          <caret line="74" column="85" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="85" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/templates/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="726" column="65" lean-forward="true" selection-start-line="726" selection-start-column="65" selection-end-line="726" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/templates/admin/signin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/templates/api/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="91" column="18" lean-forward="true" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="18" />
+          <folding>
+            <element signature="e#10131#10237#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/templates/admin/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/templates/admin/crafting.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-171">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#0;n#div#0;n#div#0;n#div#2;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#2;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#1;n#div#0;n#div#0;n#div#2;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#2;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#0;n#div#2;n#div#0;n#div#2;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#2;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#2;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#2;n#div#1;n#div#2;n#div#0;n#div#2;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#1;n#div#2;n#div#0;n#div#2;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#4;n#div#1;n#div#2;n#div#0;n#div#2;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#5;n#div#1;n#div#2;n#div#0;n#div#2;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#6;n#div#1;n#div#2;n#div#0;n#div#2;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#div#1;n#div#2;n#section#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/static/demo_data/tables/datatable_2500.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2394" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/static/demo_data/tables/datatable_ajax.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-399" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/static/demo_data/tables/datatable_nested.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1482" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/static/demo_data/handsontable/cars.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/static/demo_data/handsontable/colors.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/static/demo_data/d3/bars/bars_basic.tsv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-108" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/static/demo_data/dashboard/traffic_sources.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2464" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/static/demo_data/d3/bars/bars_grouped.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/static/demo_data/d3/bars/bars_stacked.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/static/demo_data/d3/lines/lines_difference.tsv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4959" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/static/demo_data/d3/other/waterfall.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/static/demo_data/d3/pies/pies_basic.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/static/demo_data/maps/vector/gdp_demo_data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2451" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/static/demo_data/wizard/education.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/templates/api/bracket_display.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/settings.cfg">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/settings.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/sql.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2068" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/static/demo_data/dimple/demo_data.tsv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8056">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/static/demo_data/dashboard/app_sales_heatmap.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1438" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/static/demo_data/dashboard/app_sales.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/admin/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/api/route_func.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-725">
+          <caret line="43" column="34" lean-forward="true" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/api/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/api/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17502">
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/templates/admin/signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-741">
+          <caret line="30" column="100" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/decorator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/admin/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="27" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/admin/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="42" column="14" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/track.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#2#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/admin/faltu.py" />
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/admin/ad.py" />
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/api/routes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="924" column="18" selection-start-line="924" selection-start-column="4" selection-end-line="924" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#196#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/admin/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-665">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#23#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/admin/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Desktop/Main/app/admin/routes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="216" column="114" selection-start-line="216" selection-start-column="114" selection-end-line="216" selection-end-column="114" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

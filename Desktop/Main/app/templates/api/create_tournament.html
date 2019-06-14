@@ -1,0 +1,61 @@
+{% extends 'api/base.html' %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+
+        <div class="col-md-6">
+
+            <!-- Horizontal form -->
+            <div class="card" style="margin-top:120px;">
+                <div class="card-header header-elements-inline">
+                    <h5 class="card-title">Create Tournament</h5>
+                </div>
+
+                <div class="card-body">
+                    <form action="" method="post">
+                        {{ form.hidden_tag() }}
+                        <p>
+                            {{ form.tournament_name.label }}<br>
+                            {{ form.tournament_name(size=32) }}<br>
+                            {% for error in form.tournament_name.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                        </p>
+                        <p>
+                            {{ form.reg_start_date.label }}<br>
+                            {{ form.reg_start_date(size=32, class='datepicker', readonly=True) }}<br>
+                            {% for error in form.reg_start_date.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                        </p>
+                        <p>
+                            {{ form.reg_end_date.label }}<br>
+                            {{ form.reg_end_date(size=32, class='datepicker', readonly=True) }}<br>
+                            {% for error in form.reg_end_date.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                        </p>
+                        <p>
+                            {{ form.tournament_start_date.label }}<br>
+                            {{ form.tournament_start_date(size=32, class='datepicker', readonly=True) }}<br>
+                            {% for error in form.tournament_start_date.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                        </p>
+                        <p>{{ form.submit(class='btn btn-warning') }}</p>
+                        </p>
+                    </form>
+                </div>
+            </div>
+            <!-- /horizotal form -->
+
+        </div>
+
+        <div class="col-md-6">
+        </div>
+    </div>
+
+{% endblock %}

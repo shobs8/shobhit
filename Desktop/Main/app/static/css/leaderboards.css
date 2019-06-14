@@ -1,0 +1,182 @@
+/* $animation-duration: .2s; */
+
+.pagination-page-info {
+    padding: .6em;
+    padding-left: 0;
+    width: 40em;
+    margin: .5em;
+    margin-left: 0;
+    font-size: 12px;
+}
+.pagination-page-info b {
+    color: black;
+    background: #6aa6ed;
+    padding-left: 2px;
+    padding: .1em .25em;
+    font-size: 150%;
+}
+
+/* #ratingModal .card {
+	max-width: 100% !important;
+} */
+
+#ratingModal {
+	max-width: none !important;
+}
+
+#ratingModal .card {
+	max-width: none !important;
+	height: auto;
+	margin: auto;
+}
+
+#ratingModal .card-body {
+	height: auto;
+}
+
+#ratingModal .card-body .tab-body main{
+	min-height: 400px;
+	height: 400px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+#ratingModal .card-footer {
+	padding: 30px;
+}
+
+#ratingModal .btn-close {
+    top: 15px;
+    right: 15px;
+}
+
+#ratingModalLabel {
+    color: white;
+    font-size: 25px;
+}
+
+#ratingModal table {
+    color: white;
+}
+
+#ratingModal .displayExist {
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#ratingModal .show { 
+    display: block;
+}
+
+#ratingModal .hide { 
+    display: none;
+}
+
+#ratingModal {
+	color: white;
+}
+
+main {
+	/* margin: 0 auto; */
+	/* max-width: 30em; */
+	padding: 0;
+}
+
+.article-list__page {
+	/* border-top: 1px solid #ddd; */
+	clear: both;
+	counter-increment: page;
+	padding-bottom: 3em;
+	position: relative;
+}
+
+.article-list__item {
+	float: left;
+	height: 15em;
+	max-width: 100%;
+	opacity: .75;
+	transition: opacity .2s, transform .2s;
+	width: 100%;
+	line-height: 240px;
+}
+
+.article-list__item__image {
+	display: block;
+	height: auto;
+	margin: 0;
+	opacity: 1;
+}
+
+.article-list__item__image--loading {
+	opacity: 0;
+}
+
+.article-list__pagination {
+	background-color: #222;
+	box-shadow: 0 0 1em rgba(#000, .25);
+	display: block;
+	list-style-type: none;
+	margin: 0;
+	padding: .5em;
+	font-size: 20px;
+	text-align: center;
+	transform: translateY(0);
+	transition: transform .2s;
+	z-index: 2;
+}
+
+.article-list__pagination__item {
+	display: inline-block;
+	margin: 0 1em;
+}
+
+.article-list__pagination__item a {
+	color: #888;
+	text-decoration: none;
+}
+
+.modal-search {
+	color: white;
+	margin: 10px 0;
+}
+
+.article-header {
+	color: white;
+	font-size: 20px;
+	text-align: center;
+    background: black;
+    padding: 10px;
+    z-index: 3;
+    width: 100%;
+}
+
+.article-list {
+	
+}
+
+.rating-tab {
+	display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.leaderboard-step {
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #999999;
+	border: none;
+	border-radius: 50%;
+	display: inline-block;
+	opacity: 0.5;
+  }
+  
+  /* Mark the active step: */
+  .leaderboard-step.active {
+	opacity: 1;
+  }
+  
+  /* Mark the steps that are finished and valid: */
+  .leaderboard-step.finish {
+	background-color: #4CAF50;
+  }

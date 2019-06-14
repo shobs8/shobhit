@@ -1,0 +1,121 @@
+{% extends 'api/base.html' %}
+
+{% block body %}
+
+<section role="main" class="content-body">
+	<!-- start: page -->
+	<div class="row">
+		<section class="card" style="width: 100%; height: auto;">
+			<header class="card-header"><h3>{{title}}</h3></header>
+			<div class="card-body">
+				<div class="form-group row">
+                    <div class="col-lg-3 text-right">
+                        <label class="control-label pt-2">Game: </label>
+                    </div>
+                    <div class="col-lg-3">
+                        <select class="form-control" data-plugin-multiselect data-plugin-options='{ "maxHeight": 200 }' id="sel_lb_game">
+                            {% for game in games %}
+                            <option value="{{ game['id'] }}">{{ game['title'] }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+				</div>
+                <div class="form-group row">
+                    <div class="col-lg-3 text-right">
+                        <label class="control-label pt-2">league: </label>
+                    </div>
+                    <div class="col-lg-3">
+                        <select class="form-control" data-plugin-multiselect data-plugin-options='{ "maxHeight": 200 }' id="sel_lb_league">
+                            {% for league in leagues %}
+                            <option value="{{ league }}">{{ league }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-3">
+                        <button class="btn btn-primary ratingBy leaderboard">Submit</button>
+                    </div>
+                </div>
+			</div>
+		</section>
+    </div>
+    
+    <br />
+
+    <div class="modal fade" id="ratingModal" tabindex="-1" role="dialog" aria-labelledby="ratingModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="ratingModalLabel">Elo Rating</h4>
+                    <button type="button" class="close btn-close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="rating-tab">
+                        <h5>Select</h5>
+                        <br />
+                        <div class="form-row">
+                            <div class="col-lg-12">
+                                <label class="control-label pt-2 text-left">Game </label>
+                                <br />
+                                <select class="form-control" id="sel_modal_game">
+                                    {% for game in games %}
+                                    <option value="{{ game['id'] }}">{{ game['title'] }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+    
+                        <div class="form-row">
+                            <div class="col-lg-12">
+                                <label class="control-label pt-2 text-left">League </label>
+                                <br />
+                                <select class="form-control" id="sel_modal_league">
+                                    {% for league in leagues %}
+                                    <option value="{{ league }}">{{ league }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rating-tab leaderboard-show">
+                        <h5>Leaderboard</h5>
+                        <div class="tab-body">
+                            <div class="article-header">
+                                <div class="form-row">
+                                    <div class="col-lg-4">Rank</div>
+                                    <div class="col-lg-4">Player</div>
+                                    <div class="col-lg-4">Rating</div>
+                                </div>
+                            </div>
+                            <main>
+                                <div class="article-list" id="article-list"></div>
+                            </main>
+                        </div>
+                    </div>
+                </div>
+                <div id="lead-modal-paginate">
+                    <ul class="article-list__pagination article-list__pagination--inactive" id="article-list-pagination"></ul>
+                </div>
+                <div class="modal-footer">
+                    <div style="overflow:auto; position: absolute;">
+                        <div style="float:right;">
+                            <button type="button" id="prevLeadBtn" onclick="nextLeadPrev(-1)">Previous</button>
+                            <button type="button" id="nextLeadBtn" onclick="nextLeadPrev(1)">Next</button>
+                        </div>
+                    </div>
+                    <!-- Circles which indicates the steps of the form: -->
+                    <div class="text-center" style="margin: auto;">
+                        <span class="leaderboard-step"></span>
+                        <span class="leaderboard-step"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- end matchCreate -->
+</section>
+
+{% endblock %}

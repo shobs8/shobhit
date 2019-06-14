@@ -1,0 +1,119 @@
+{% extends 'api/base.html' %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block message_block %}
+{% endblock %}
+
+{% block body %}
+<section id="tournament-page">
+<div class="container-fluid">
+    <div class="row">
+        <div class="card mb-0 info-header" style="width:100%;">
+            <div class="card-body bg-quaternary" style="background:url('/static/img/games/{{tournament.game.logo}}');">
+                <div class="overlay-shadow">
+                    <div class="d-flex align-items-center info-header-body ">
+                        <div class="summary-icon">
+                            <img src="/static/img/tournaments/{{tournament.logo}}" title="">
+                        </div>
+                        <div class="info-header-summary" style="width: 50%;">
+                            <div class="summary">
+                                <p class="information">
+                                <div class="d-flex flex-wrap">
+                                    <div class="platform">
+                                        {% for plateform in tournament.plateforms %}
+                                            <span class="badge">{{plateform}}</span>
+                                        {% endfor %}
+                                    </div>
+                                    <div class="discipline px-2">
+                                        <a href="#" class="highlighted">{{tournament.game.name}}</a>
+                                    </div>
+                                </div>
+                                <h1 class="inverted" >{{tournament.name}}</h1>
+                                <p> By <span >{{tournament.organizer}}</span> </p>
+                                <p class="location">
+                                    <i class="el el-flag"></i>
+                                    <span>{% if tournament.online == true %}online{% else %}offline{% endif %}</span>
+                                </p>
+                                <p class="dates"> {{tournament.start_date}} - {{tournament.end_date}} </p>
+                            </div>
+                        </div>
+                        <div class="info-summary-footer">
+                                <div class="card" style="width: 352px;">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <div class="Registration-date">
+                                                {% if not user_already_registered %}
+                                                    Registration open
+                                                <p class="dates"> until 18 February 2019 </p>
+                                                {% else %}
+                                                <span style="color:green;">You participate in this tournament.</span>
+                                                {% endif %}
+                                            </div>
+                                            <div class="players-rank">
+                                                <h2>{% if tournament.players|length %}{{tournament.players|length}}{% else %}0{% endif %}</h2>
+                                                <h2>{{tournament.size}}</h2>
+                                                <p>Players</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% if not user_already_registered %}
+
+                                        <a href="{{url_for('tournament_regisration', tournament_id=tournament.tournament_id)}}" class="btn btn-success Register-btn">Register to the tournament</a>
+                                    {% endif %}
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light col-12">
+
+            <div class=" navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{url_for('tournament_information', tournament_id=tournament.tournament_id)}}">Information <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Participants</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Matches
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Latest results</a>
+                            <a class="dropdown-item" href="#">Upcoming matches</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Schedule</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Watch</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Share </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class=flashes>
+                    {% for category, message in messages %}
+                        <li style="list-style-type:none" class="alert alert-{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        {% if page_type == 'info_page' %}
+            {% include 'tournament_info.html' %}
+        {% elif page_type == 'registration_page' %}
+            {% include 'tournament_registration.html' %}
+        {% endif %}
+    </div>
+</div>
+</section>
+{% endblock %}

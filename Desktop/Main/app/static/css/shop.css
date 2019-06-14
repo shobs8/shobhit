@@ -1,0 +1,182 @@
+/*Shop Page*/
+
+.gem-buttons {
+    width: calc(100% - 28px);
+    height: 500px;
+    margin-left: 14px;
+    background-color: rgb(46,49,34);
+    box-shadow: 10px 10px 0px rgb(221,221,221), -10px 1px 0px rgb(221,221,221);
+    padding: 0 5px 0 5px;
+}
+
+.gem-buttons .row-buttons {
+	width: calc( 100% - 10px );
+	height: 50%;
+}
+
+.gem-buttons .gem-button {
+	width: calc(25% - 10px);
+	height: calc(100% - 20px);
+	margin: 10px 5px 10px 5px;
+	background: white;
+	float: left;
+	border-radius: 10px;
+	position: relative;
+}
+
+.gem-buttons .gem-button .gem-title {
+
+}
+
+.gem-buttons .gem-button .gem-price {
+	position: absolute;
+	width: calc(100% - 20px);
+	height: 40px;
+	margin-left: 10px;
+	background-color: black;
+	opacity: 0.5;
+	bottom: 15px;
+    left: 0;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    line-height: 40px;
+    font-size: 22px;
+}
+
+#tier-group {
+	background-color: black;
+	height: auto;
+}
+
+#tier-group .tabs-header {
+	width: 100%;
+	height: auto;
+}
+
+#tier-group .tabs-header .button {
+	background-color: rgb(30, 226, 225);
+	display:inline-block;
+	font-size:2em;
+	padding:.5em 2em;
+	text-decoration:none;
+	color: black;
+	float: right;
+	font-size: 18px;
+}
+
+#tier-group .tabs-header .button.active {
+	background-color: rgb(81, 205, 50);
+}
+
+#tier-group .tabs-header .button:hover {
+	background-color: rgb(227, 54, 80);
+}
+
+#tier-group .tabs-header #prize-plus {
+	transform: skew(0deg, 0deg);
+}
+
+#tier-group .tabs-header #prize-plus:after {
+	content: " ";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -23px;
+    z-index: -1;
+    background: #FF0000;
+    transform-origin: bottom left;
+    -ms-transform: skew(-20deg, 0deg);
+    -webkit-transform: skew(-20deg, 0deg);
+    transform: skew(-20deg, 0deg);
+}
+
+#tier-group .tabs-header #prize-plus.active:after {
+	background-color: rgb(81, 205, 50);
+}
+
+#tier-group .tabs-header #prize-plus:hover:after {
+	background-color: rgb(227, 54, 80);
+}
+
+#tier-group .tabs-header #groups {
+	float: left;
+}
+
+#tier-group .tabs-content {
+	width: 100%;
+	height: 400px;
+	padding-top: 100px;
+	background: white;
+	position: relative;
+}
+#tier-group .tabs-content .sub-title-tier { 
+	font-weight: bold;
+	font-size: 50px;
+	font-style: italic;
+	position: absolute;
+	right: 0px;
+	top: 40px;
+	background-image: url('../img/tier.png');
+	background-size: 225px 50px;
+	width: 225px;
+	padding-left: 60px;
+}
+
+#tier-group .tabs-content .inventory-slider {
+	background-color: white;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+#tier-group .tabs-content .inventory-slider .carousel {
+	width: 90%;
+  	margin: auto;
+  	height: 100%;
+}
+
+#tier-group .tabs-content .inventory-slider .inventory-item {
+	margin: 60px 20px 10px 20px;
+	width: 150px !important;
+	height: 100px;
+	border-radius: 0 0 15px 15px;
+	border: 1px solid;
+	border-bottom: 5px solid rgb(217,194,38);
+	box-shadow: 0px 2px 5px;
+	text-align: center;
+}
+
+#tier-group .tabs-content .inventory-slider img {
+	padding: 10px;
+	height: calc(50% - 20px);
+}
+
+#tier-group .tabs-content .inventory-slider .carousel .prev-arrow {
+	position: absolute;
+	top: 120px;
+	left: -35px;
+	z-index: 1;
+	font-size: 60px;
+}
+
+#tier-group .tabs-content .inventory-slider .carousel .next-arrow {
+	position: absolute;
+	top: 120px;
+	right: -35px;
+	z-index: 1;
+	font-size: 60px;
+}
+
+
+.parallelogram{
+  transform: skew(-20deg, 0deg);
+}
+
+#exampleModal .modal-content{
+	background-color: white;
+	height: 200px;
+	top: 200px;
+}

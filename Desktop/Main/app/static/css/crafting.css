@@ -1,0 +1,6 @@
+/*todo: change background img*/
+.crafting-page{
+    background: url(../img/starcraft.jpg) no-repeat;
+    background-size: cover;
+    position: relative;
+}

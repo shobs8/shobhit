@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html class="fixed dark">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Web Fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light"
+          rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <!-- Vendor CSS -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/animate/animate.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/font-awesome/css/fontawesome-all.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/magnific-popup/magnific-popup.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css') }}"/>
+
+    <!-- Specific Page Vendor CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/jquery-ui/jquery-ui.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/jquery-ui/jquery-ui.theme.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap-multiselect/bootstrap-multiselect.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/morris/morris.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/jquery-datatable/dataTables.bootstrap4.min.css') }}"/>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/select2/css/select2.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/select2-bootstrap-theme/select2-bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/pnotify/pnotify.custom.css') }}"/>
+
+    <!-- CDN CSS -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="http://rawgit.com/vitmalina/w2ui/master/dist/w2ui.min.css" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css') }}"/>
+    <!--css for crafting page-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/crafting.css') }}"/>
+
+    <!-- Skin CSS -->
+    <!--<link rel="stylesheet" href="static/css/skins/default.css"/>-->
+
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/social.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/shop.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/leaderboards.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sponsorship.css') }}"/>
+
+
+    <!-- Head Libs -->
+    <script src="{{ url_for('static', filename='vendor/modernizr/modernizr.js') }}"></script>
+
+
+    <!-- Title Page -->
+    {% if title %}
+    <title>{{title}}</title>
+    {% else %}
+    <title>Web Page</title>
+    {% endif %}
+
+</head>
+<body>
+<!--loader
+<div id="loader" style="position: fixed; left: 0; top: 0;  width: 100%;  background: rgba(0,0,0,0.6); z-index: 1111111; height: 100%;">
+    <div id="loaderImg" style="    position: absolute;   top: 50%;   left: 50%;   transform: translate(-50%,-50%);">
+        <img src="../static/img/loader/loader.png" alt="loading ...">
+    </div>
+</div>
+-->
+
+<!--Audio-->
+<audio controls id="sword_sound">
+    <source src="../static/audio/zapsplat_warfare_sword_small_thin_draw_from_sheath_17947.mp3" type="audio/mp3">
+</audio>
+<!-- start: header -->
+<div class="">
+    <header class="header d-flex justify-content-between">
+        <div class="d-flex ">
+            <div class="logo-container">
+                <a href="../2.1.1" class="logo">
+                    <img src="../static/img/logo-purple.png" alt="Porto Admin"/>
+                </a>
+                <div class="d-md-none toggle-sidebar-left" data-toggle-class="sidebar-lef" data-target="html"
+                     data-fire-event="sidebar-left">
+                    <i class="fas fa-bars" aria-label="Toggle sidebar"></i>
+                </div>
+            </div>
+            <div class="nav-form">
+                <div class="nav-group header-group" id="header-group">
+                    <a class="btn header-button" href="{{url_for('api.home')}}">Main</a>
+                    <a class="btn header-button" href="{{url_for('api.crafting')}}">Crafting</a>
+                    <a class="btn header-button" href="{{url_for('api.social')}}">Social</a>
+                    <a class="btn header-button" href="{{url_for('api.shop')}}">Shop</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- start: search & user box -->
+        <div class="header-right">
+            <div class="header-right-inner d-flex">
+                <div id="userbox" class="userbox border-r">
+                    <a href="#" data-toggle="dropdown" class="d-flex">
+                        <figure class="profile-picture">
+                            <img src="../static/img/gamer.png" alt="Joseph Doe" class="img-fluid"
+                                 data-lock-picture=""/>
+                        </figure>
+                        <span class="icon-box icon-caret"></span>
+                        <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
+                            <span class="name">{{current_user.get_id()}}</span>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu">
+                        <ul class="list-unstyled mb-0">
+                            <li class="pb-1">
+                                <a role="menuitem" tabindex="-1" href="{{url_for('api.profile')}}">
+                                    <span class="icon-box icon-user mr-1"></span>My Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a role="menuitem" tabindex="-1" href="{{url_for('api.logout')}}">
+                                    <span class="icon-box icon-logout mr-1"></span>Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="notifications d-flex border-r">
+                    <a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
+                        <div class="icon-box icon-bell"></div>
+                        <span class="badge">3</span>
+                    </a>
+                    <div class="dropdown-menu notification-menu">
+                        <div class="notification-title">
+                            <span class="float-right badge badge-default">3</span>
+                            Alerts
+                        </div>
+                        <div class="content">
+                            <ul>
+                                <li>
+                                    <a href="#" class="clearfix">
+                                        <div class="image">
+                                            <i class="fas fa-thumbs-down bg-danger text-light"></i>
+                                        </div>
+                                        <span class="title">Server is Down!</span>
+                                        <span class="message">Just now</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="clearfix">
+                                        <div class="image">
+                                            <i class="fas fa-lock bg-warning text-light"></i>
+                                        </div>
+                                        <span class="title">User Locked</span>
+                                        <span class="message">15 minutes ago</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="clearfix">
+                                        <div class="image">
+                                            <i class="fas fa-signal bg-success text-light"></i>
+                                        </div>
+                                        <span class="title">Connection Restaured</span>
+                                        <span class="message">10/10/2017</span>
+                                    </a>
+                                </li>
+                                <hr/>
+                                <div class="text-right">
+                                    <a href="#" class="view-more">View All</a>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="add-box border-r">
+                    <a class="icon-box icon-add modal-with-form" href="#fundsForm"></a>
+                    <!-- Modal Form -->
+                    <div id="fundsForm" class="modal-block modal-block-primary mfp-hide">
+                        <section class="card">
+                            <header class="card-header">
+                                <h2 class="card-title">Add Funds</h2>
+                            </header>
+                            <div class="card-body">
+                                <form>
+                                    <div class="form-group">
+                                        <object style="width:100%;height:100%;width: 450px; height: 320.25px; float: none; clear: both; margin: 2px auto;"
+                                                data="https://www.youtube.com/embed/4qdmduDJXdU?autoplay=1">
+                                        </object>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4">Email</label>
+                                            <input type="email" class="form-control" id="inputEmail4"
+                                                   placeholder="Email">
+                                        </div>
+                                        <div class="form-group col-md-6 mb-3 mb-lg-0">
+                                            <label for="inputPassword4">Password</label>
+                                            <input type="password" class="form-control" id="inputPassword4"
+                                                   placeholder="Password">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputCity">City</label>
+                                            <input type="text" class="form-control" id="inputCity">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="inputState">State</label>
+                                            <select id="inputState" class="form-control">
+                                                <option selected>Choose...</option>
+                                                <option>...</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="inputZip">Zip</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <footer class="card-footer">
+                                <div class="row">
+                                    <div class="col-md-12 text-right">
+                                        <button class="btn btn-primary modal-confirm">Submit</button>
+                                        <button class="btn btn-default modal-dismiss">Cancel</button>
+                                    </div>
+                                </div>
+                            </footer>
+                        </section>
+                    </div>
+                </div>
+                <div class="account-box">
+                    <a href="#" data-toggle="dropdown">
+                        <div class="profile-info">
+                            <span class="name">$0.00</span>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu">
+                        <ul class="list-unstyled mb-0">
+                            <li class="pb-1">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate impedit placeat voluptatum? Accusantium ad, aliquam amet cupiditate deleniti deserunt illum iure magnam molestiae quas ratione reprehenderit sapiente. Eaque, nisi, odit.
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end: search & user box -->
+    </header>
+
+    <!-- start: sidebar -->
+    <!--id="sidebar-left"-->
+    <aside class="sidebar-left" id="sidebar-left">
+
+        <div class="sidebar-header">
+            <div class="sidebar-toggle d-none d-md-block toggled" data-toggle-class="sidebar-left-collapsed"
+                 data-target="html"
+                 data-fire-event="sidebar-left-toggle">
+                <i class="fas fa-bars" aria-label="Toggle sidebar"></i>
+            </div>
+        </div>
+
+        <div class="nano">
+            <div class="nano-content">
+                <nav id="menu" class="nav-main" role="navigation">
+                    <ul class="nav nav-main">
+                        <li class="nav-parent">
+                            <a class="nav-link d-flex justify-content-between align-items-center" href="#">
+                                <div class="div_for_left_sidebar">
+                                    <span class="icon-box-md icon-1"></span>
+                                    <span>League Matches</span>
+                                </div>
+                                <span class="icon-box icon-caret"></span>
+                            </a>
+                            <ul class="nav nav-children" style="">
+                                <li>
+                                    <a class="nav-link modal-with-form" href="#leagueTeam">Teams</a>
+                                    <!-- Start Modal Popup -->
+                                    <div id="leagueTeam" class="modal-block modal-block-primary mfp-hide">
+                                        <section class="card">
+                                            <header class="card-header">
+                                                <h2 class="card-title">League Team Match</h2>
+                                            </header>
+                                            <div class="card-body">
+                                                <form>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputEmail4">Email</label>
+                                                            <input type="email" class="form-control" id="inputEmail4"
+                                                                   placeholder="Email">
+                                                        </div>
+                                                        <div class="form-group col-md-6 mb-3 mb-lg-0">
+                                                            <label for="inputPassword4">Password</label>
+                                                            <input type="password" class="form-control"
+                                                                   id="inputPassword4"
+                                                                   placeholder="Password">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputCity">City</label>
+                                                            <input type="text" class="form-control" id="inputCity">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputState">State</label>
+                                                            <select id="inputState" class="form-control">
+                                                                <option selected>Choose...</option>
+                                                                <option>...</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-md-2">
+                                                            <label for="inputZip">Zip</label>
+                                                            <input type="text" class="form-control" id="inputZip">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <footer class="card-footer">
+                                                <div class="row">
+                                                    <div class="col-md-12 text-right">
+                                                        <button class="btn btn-primary modal-confirm">Submit</button>
+                                                        <button class="btn btn-default modal-dismiss">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </footer>
+                                        </section>
+                                    </div>
+                                    <!-- end PopUp -->
+                                </li>
+                                <li>
+                                    <a class="nav-link modal-with-form" href="#leagueInd">Individual</a>
+                                    <!-- Start Modal Popup -->
+                                    <div id="leagueInd" class="modal-block modal-block-primary mfp-hide">
+                                        <section class="card">
+                                            <header class="card-header">
+                                                <h2 class="card-title">League Match</h2>
+                                            </header>
+                                            <div class="card-body">
+                                                <form>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputEmail4">Email</label>
+                                                            <input type="email" class="form-control" id="inputEmail4"
+                                                                   placeholder="Email">
+                                                        </div>
+                                                        <div class="form-group col-md-6 mb-3 mb-lg-0">
+                                                            <label for="inputPassword4">Password</label>
+                                                            <input type="password" class="form-control"
+                                                                   id="inputPassword4"
+                                                                   placeholder="Password">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputCity">City</label>
+                                                            <input type="text" class="form-control" id="inputCity">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputState">State</label>
+                                                            <select id="inputState" class="form-control">
+                                                                <option selected>Choose...</option>
+                                                                <option>...</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-md-2">
+                                                            <label for="inputZip">Zip</label>
+                                                            <input type="text" class="form-control" id="inputZip">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <footer class="card-footer">
+                                                <div class="row">
+                                                    <div class="col-md-12 text-right">
+                                                        <button class="btn btn-primary modal-confirm">Submit</button>
+                                                        <button class="btn btn-default modal-dismiss">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </footer>
+                                        </section>
+                                    </div>
+                                    <!-- end PopUp -->
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-parent">
+                            <a class="nav-link d-flex justify-content-between align-items-center" href="#">
+                                <div class="div_for_left_sidebar">
+                                    <span class="icon-box-md icon-1"></span>
+                                    <span>Player Matches</span>
+                                </div>
+                                <span class="icon-box icon-caret"></span>
+                            </a>
+                            <ul class="nav nav-children" style="">
+                                <li>
+                                    <a class="nav-link modal-with-form" href="#matchQueue">Queue</a>
+                                    <!-- Start Modal Popup -->
+                                    <div id="matchQueue" class="modal-block modal-block-primary mfp-hide">
+                                        <section class="card">
+                                            <header class="card-header">
+                                                <h2 class="card-title">Queue Match</h2>
+                                            </header>
+                                            <div class="card-body">
+                                                <form>
+                                                    <div class="form-row" style="margin: auto; margin-top: 5px;">
+                                                        <div class="form-group col-md-12">
+                                                            <select id="indvSelGame" class="form-control">
+                                                                <option value="cod" selected>COD</option>
+                                                                <option value="lol">LOL</option>
+                                                                <option value="dota">DOTA</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row" style="margin: auto; margin-top: 10px;">
+                                                        <div class="form-group col-md-12">
+                                                            <select id="indvSelLeag" class="form-control">
+                                                                <option value="copper" selected>copper</option>
+                                                                <option value="bronze">bronze</option>
+                                                                <option value="silver">silver</option>
+                                                                <option value="gold">gold</option>
+                                                                <option value="platform">platform</option>
+                                                                <option value="illudium">illudium</option>
+                                                                <option value="rhodium">rhodium</option>
+                                                                <option value="diamond">diamond</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-row" style="margin: auto; margin-top: 10px;">
+                                                        <div class="form-group col-md-12">
+                                                            <select id="indvSelWagerAmount" class="form-control">
+                                                                <option value="5" selected>$5</option>
+                                                                <option value="10">$10</option>
+                                                                <option value="15">$15</option>
+                                                                <option value="20">$20</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <input type="hidden" class="form-control" id="indvTxtUser" placeholder="User Name" value="{{ username }}">
+                                                </form>
+                                            </div>
+                                            <footer class="card-footer">
+                                                <div class="form-row" style="margin: auto; margin-top: 10px;">
+                                                    <div class="form-group col-md-12 queue-buttons">
+                                                        <button class="btn btn-primary modal-confirm" id="btnQueueIndv" style="width: 260px;">Queue</button><!-- modal-confirm-->
+                                                        <button class="btn btn-default modal-dismiss" style="width: 260px; margin-top: 10px;">Cancel</button><!-- modal-dismiss-->
+                                                    </div>
+
+                                                    <div class="form-group col-md-12 preloader-queue">
+                                                      <div class="bounce-loader">
+                                                        <div class="bounce1"></div>
+                                                        <div class="bounce2"></div>
+                                                        <div class="bounce3"></div>
+                                                      </div>
+                                                    </div>
+                                                </div>
+                                            </footer>
+                                        </section>
+                                    </div>
+                                    <!-- end PopUp -->
+                                </li>
+                                <li>
+                                    <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"></button>-->
+                                    <a class="nav-link modal-with-form" href="#matchCreate">Create</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-parent">
+                            <a class="nav-link d-flex justify-content-between align-items-center" href="#">
+                                <div class="div_for_left_sidebar">
+                                    <span class="icon-box-md icon-2"></span>
+                                    <span>Missions</span>
+                                </div>
+                                <span class="icon-box icon-caret"></span>
+                            </a>
+                            <ul class="nav nav-children" style="">
+                                <li>
+                                    <a class="nav-link modal-with-form" href="#missionQuests">Quests</a>
+                                    <!-- Start Modal Popup -->
+                                    <div id="missionQuests" class="modal-block modal-block-primary mfp-hide">
+                                        <section class="card">
+                                            <header class="card-header">
+                                                <h2 class="card-title">Quests</h2>
+                                            </header>
+                                            <div class="card-body">
+                                                <form>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputEmail4">Email</label>
+                                                            <input type="email" class="form-control" id="inputEmail4"
+                                                                   placeholder="Email">
+                                                        </div>
+                                                        <div class="form-group col-md-6 mb-3 mb-lg-0">
+                                                            <label for="inputPassword4">Password</label>
+                                                            <input type="password" class="form-control"
+                                                                   id="inputPassword4"
+                                                                   placeholder="Password">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputCity">City</label>
+                                                            <input type="text" class="form-control" id="inputCity">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputState">State</label>
+                                                            <select id="inputState" class="form-control">
+                                                                <option selected>Choose...</option>
+                                                                <option>...</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-md-2">
+                                                            <label for="inputZip">Zip</label>
+                                                            <input type="text" class="form-control" id="inputZip">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <footer class="card-footer">
+                                                <div class="row">
+                                                    <div class="col-md-12 text-right">
+                                                        <button class="btn btn-primary modal-confirm">Submit</button>
+                                                        <button class="btn btn-default modal-dismiss">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </footer>
+                                        </section>
+                                    </div>
+                                </li>
+                                <!-- end PopUp -->
+                                <li>
+                                    <a class="nav-link modal-with-form" href="#missionExp">Experience</a>
+                                    <!-- Start Modal Popup -->
+                                    <div id="missionExp" class="modal-block modal-block-primary mfp-hide">
+                                        <section class="card">
+                                            <header class="card-header">
+                                                <h2 class="card-title">Experience</h2>
+                                            </header>
+                                            <div class="card-body">
+                                                <form>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputEmail4">Email</label>
+                                                            <input type="email" class="form-control" id="inputEmail4"
+                                                                   placeholder="Email">
+                                                        </div>
+                                                        <div class="form-group col-md-6 mb-3 mb-lg-0">
+                                                            <label for="inputPassword4">Password</label>
+                                                            <input type="password" class="form-control"
+                                                                   id="inputPassword4"
+                                                                   placeholder="Password">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputCity">City</label>
+                                                            <input type="text" class="form-control" id="inputCity">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputState">State</label>
+                                                            <select id="inputState" class="form-control">
+                                                                <option selected>Choose...</option>
+                                                                <option>...</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-md-2">
+                                                            <label for="inputZip">Zip</label>
+                                                            <input type="text" class="form-control" id="inputZip">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <footer class="card-footer">
+                                                <div class="row">
+                                                    <div class="col-md-12 text-right">
+                                                        <button class="btn btn-primary modal-confirm">Submit</button>
+                                                        <button class="btn btn-default modal-dismiss">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </footer>
+                                        </section>
+                                    </div>
+                                </li>
+                                <!-- end PopUp -->
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="nav-link modal-with-form d-flex justify-content-between align-items-center"
+                               href="#inventory">
+                                <div class="div_for_left_sidebar">
+                                    <span class="icon-box-md icon-3"></span>
+                                    <span>Inventory</span>
+                                </div>
+
+                                <!--<span class="icon-box icon-caret"></span>-->
+                            </a>
+                        </li>
+                        <!-- end PopUp -->
+                        </li>
+                        <li>
+                            <a class="nav-link modal-with-form d-flex justify-content-between align-items-center"
+                               href="#carnival">
+                                <div class="div_for_left_sidebar">
+                                    <span class="icon-box-md icon-4"></span>
+                                    <span>Carnival</span>
+                                </div>
+                                <!--<span class="icon-box icon-caret"></span>-->
+                            </a>
+                        </li>
+                        <!-- end PopUp -->
+                        </li>
+                        <li>
+                            <a class="nav-link modal-with-form d-flex justify-content-between align-items-center profile-ratingBy"
+                               href="#ratingModal">
+                                <div class="div_for_left_sidebar">
+                                    <span class="icon-box-md icon-2"></span>
+                                    <span>Leaderboard</span>
+                                </div>
+                                <!--<span class="icon-box icon-caret"></span>-->
+                            </a>
+                            <div id="ratingModal" class="modal-block modal-block-primary mfp-hide">
+                                <section class="card">
+                                    <div class="card-header">
+                                        <div class="row">
+                                            <h4 class="card-title" id="ratingModalLabel">Elo Rating</h4>
+                                            <button type="button" class="close btn-close" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="rating-tab">
+                                            <h5>Select</h5>
+                                            <br />
+                                            <div class="form-row">
+                                                <div class="col-lg-12">
+                                                    <label class="control-label pt-2 text-left">Game </label>
+                                                    <br />
+                                                    <select class="form-control" id="sel_modal_game">
+                                                        <option value="cod">Call of Duty</option>
+                                                        <option value="dota">DOTA</option>
+                                                        <option value="lol">League of Lords</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                        
+                                            <div class="form-row">
+                                                <div class="col-lg-12">
+                                                    <label class="control-label pt-2 text-left">League </label>
+                                                    <br />
+
+                                                    <select class="form-control" id="sel_modal_league">
+                                                        <option value="copper">copper</option>
+                                                        <option value="bronze">bronze</option>
+                                                        <option value="silver">silver</option>
+                                                        <option value="gold">gold</option>
+                                                        <option value="platform">platform</option>
+                                                        <option value="illudium">illudium</option>
+                                                        <option value="rhodium">rhodium</option>
+                                                        <option value="diamond">diamond</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="rating-tab leaderboard-show">
+                                            <h5>Leaderboard</h5>
+                                            <div class="tab-body">
+                                                <div class="article-header">
+                                                    <div class="form-row">
+                                                        <div class="col-lg-4">Rank</div>
+                                                        <div class="col-lg-4">Player</div>
+                                                        <div class="col-lg-4">Rating</div>
+                                                    </div>
+                                                </div>
+                                                <main>
+                                                    <div class="article-list" id="article-list"></div>
+                                                </main>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="lead-modal-paginate">
+                                        <ul class="article-list__pagination article-list__pagination--inactive" id="article-list-pagination"></ul>
+                                    </div>
+                                    <footer class="card-footer">
+                                        <div class="row">
+                                            <div class="col-md-12 text-right">
+                                                <div style="overflow:auto; position: absolute;">
+                                                    <div style="float:right;">
+                                                        <button type="button" id="prevLeadBtn" onclick="nextLeadPrev(-1)">Previous</button>
+                                                        <button type="button" id="nextLeadBtn" onclick="nextLeadPrev(1)">Next</button>
+                                                    </div>
+                                                </div>
+                                                <!-- Circles which indicates the steps of the form: -->
+                                                <div class="text-center" style="margin: auto;">
+                                                    <span class="leaderboard-step"></span>
+                                                    <span class="leaderboard-step"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </footer>
+                                </section>
+                            </div>
+                        </li>
+                        <!-- end PopUp -->
+                        </li>
+                    </ul>
+                </nav>
+                <hr class="separator"/>
+            </div>
+            <script>
+                // Maintain Scroll Position
+                if (typeof localStorage !== 'undefined') {
+                    if (localStorage.getItem('sidebar-left-position') !== null) {
+                        var initialPosition = localStorage.getItem('sidebar-left-position'),
+
+                            sidebarLeft = document.querySelector('#sidebar-left .nano-content');
+                        sidebarLeft.scrollTop = initialPosition;
+                    }
+                }
+            </script>
+            <!--<div class="container">-->
+
+            <!--&lt;!&ndash; Modal &ndash;&gt;-->
+            <!--<div class="modal fade" id="myModal" role="dialog">-->
+            <!--<div class="modal-dialog modal-lg">-->
+            <!--<div class="modal-content">-->
+            <!--<div class="modal-header">-->
+            <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+            <!--<h4 class="modal-title">Modal Header</h4>-->
+            <!--</div>-->
+            <!--<div class="modal-body">-->
+            <!--<div class="container">-->
+            <!--<ul class="nav nav-tabs">-->
+            <!--<li class="active"><a data-toggle="tab" href="#home">Home</a></li>-->
+            <!--<li><a data-toggle="tab" href="#menu1">Menu 1</a></li>-->
+            <!--<li><a data-toggle="tab" href="#menu2">Menu 2</a></li>-->
+            <!--<li><a data-toggle="tab" href="#menu3">Menu 3</a></li>-->
+            <!--</ul>-->
+
+            <!--<div class="tab-content">-->
+            <!--<div id="home" class="tab-pane fade in active">-->
+            <!--<div class="all-games" id="cmmGamesList" data-type="games-list">-->
+            <!--<div class="row">-->
+            <!--<div class="one-game-entry radio-trigger a-radio psn-game">-->
+            <!--<span class="radio-indicator"></span>-->
+            <!--<span class="game-name rr-value" data-value="madden18"-->
+            <!--data-game-type="madden">Madden 18</span>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div id="menu1" class="tab-pane fade">-->
+            <!--<h3>Menu 1</h3>-->
+            <!--<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi-->
+            <!--ut aliquip ex ea commodo consequat.</p>-->
+            <!--</div>-->
+            <!--<div id="menu2" class="tab-pane fade">-->
+            <!--<h3>Menu 2</h3>-->
+            <!--<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem-->
+            <!--accusantium doloremque laudantium, totam rem aperiam.</p>-->
+            <!--</div>-->
+            <!--<div id="menu3" class="tab-pane fade">-->
+            <!--<h3>Menu 3</h3>-->
+            <!--<p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae-->
+            <!--vitae dicta sunt explicabo.</p>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+
+            <!--</div>-->
+            <!--<div class="modal-footer">-->
+            <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+
+            <div class='modals'>
+                <!-- start modal matchcreate -->
+                <div id="matchCreate" class="modal-block modal-block-primary mfp-hide">
+                    <section class="card">
+                        <header class="card-header">
+                            <h2 class="card-title">Create Match</h2>
+                        </header>
+                        <div class="card-body">
+                        <form id="matchForm" method="POST" action="">
+                            <!-- One "tab" for each step in the form: -->
+                            <div class="tab">
+                                <h6>Choose a Console</h6>
+                                <br />
+                                <input type="radio" name="console" value="console-pc" id="console-pc">
+                                <label for="console-pc" class='radio-inline'>PC</label>
+                                <input type="radio" name="console" value="console-xbox" id="console-xbox" >
+                                <label for="console-xbox" class='radio-inline'>Xbox</label>
+                                <input type="radio" name="console" value="console-playstation" id="console-ps" >
+                                <label for="console-ps" class='radio-inline'>Playstation</label>
+                                <input type="radio" name="console" value="console-switch" id="console-switch" >
+                                <label for="console-switch" class='radio-inline'>Switch</label>
+                            </div>
+                            <div class="tab">
+                                <h6>Choose a Game</h6>
+                                <br />
+                                <input type="radio" name="game" value="cod" id="game-1">
+                                <label for="game-1" class='radio-inline'>Call of Duty</label>
+                                <input type="radio" name="game" value="lol" id="game-2" >
+                                <label for="game-2" class='radio-inline'>LOL</label>
+                                <input type="radio" name="game" value="dota" id="game-3" >
+                                <label for="game-3" class='radio-inline'>Dota</label>
+                            </div>
+                            <div class="tab">
+                                <h6>Choose a Play Style</h6>
+                                <br />
+                                <input type="radio" name="input" value="input-controller" id="input-controller">
+                                <label for="input-controller" class='radio-inline'>Controller</label>
+                                <input type="radio" name="input" value="input-keyboard" id="input-keyboard" >
+                                <label for="input-keyboard" class='radio-inline'>Keyboard + Mouse</label>
+                            </div>
+                            <div class="tab">
+                                <h6>Place a Wager</h6>
+                                <br />
+                                <select id="wagers" name="wagers" class='required'>
+                                    <option value="wager-10">10</option>
+                                    <option value="wager-25">25</option>
+                                    <option value="wager-50">50</option>
+                                </select>
+                                <label for="wagers">Wagers</label>
+                            </div>
+                            <div class="tab">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <h6>Game Rules</h6>
+                                        <br />
+                                        <select id="rules" name="rules" class='required'>
+                                            <option value="rules-single">Single Game</option>
+                                            <option value="rules-three">Best of Three</option>
+                                            <option value="rules-five">Best of Five</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <h6>Game Type</h6>
+                                        <br />
+                                        <select id="type" name="type" class='required'>
+                                            <option value="type-1duo">1vs1 Duo</option>
+                                            <option value="type-2squad">2vs2 Squad</option>
+                                            <option value="type-1play">1vs1 Playground</option>
+                                        </select>
+                                    </div>
+                                </div> <!-- end row -->
+                            </div> <!-- end tabs -->
+                            <div class="tab">
+                                <div class="row">
+                                    <h6>Select a league</h6>
+                                    <br />
+                                    <select id="league" name="league" class='required'>
+                                        <option value="copper">copper</option>
+                                        <option value="bronze">bronze</option>
+                                        <option value="silver">silver</option>
+                                        <option value="gold">gold</option>
+                                        <option value="platform">platform</option>
+                                        <option value="illudium">illudium</option>
+                                        <option value="rhodium">rhodium</option>
+                                        <option value="diamond">diamond</option>
+                                    </select>
+                                    <label for="league">Leagues</label>
+                                </div>
+                                <div class="row">
+                                    <h6>Player 2</h6>
+                                    <br />
+                                    <input type="text" name="playertwo" id="playertwo" required>
+                                    <label for="playertwo" class='radio-inline'>Player 2</label>
+                                </div>
+                                <div class="row">
+                                    <h6>Winner</h6>
+                                    <br />
+                                    <input type="text" name="winner" id="winner" required>
+                                    <label for="winner" class='radio-inline'>Winner</label>
+                                </div>
+                            </div>
+                        </form> <!-- end form -->
+                        </div> <!-- end cardBody-->
+                        <div class="form-triggers">
+                            <div style="overflow:auto">
+                                <div style="float:right;">
+                                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                </div>
+                            </div>
+                            <!-- Circles which indicates the steps of the form: -->
+                            <div style="text-align:center;">
+                                <span class="step"></span>
+                                <span class="step"></span>
+                                <span class="step"></span>
+                                <span class="step"></span>
+                                <span class="step"></span>
+                                <span class="step"></span>
+                            </div>
+                        </div> <!-- end form-trigger -->
+                        <footer class="card-footer">
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <button class="btn btn-primary modal-confirm" id="matchSubmit">Submit</button>
+                                    <button class="btn btn-primary modal-confirm" id="reportMatch">Report</button>
+                                    <button class="btn btn-primary modal-confirm" id="fakeReportMatch">FakeReport</button>
+                                    <button class="btn btn-default modal-dismiss">Cancel</button>
+                                </div>
+                            </div>
+                        </footer>
+                    </section> <!-- end card -->
+                </div> <!-- end matchCreate -->
+                <!-- start modal inventory -->
+                <div id="inventory" class="modal-block modal-block-primary mfp-hide">
+                    <section class="card">
+                        <header class="card-header">
+                            <h2 class="card-title">Inventory</h2>
+                        </header>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">Email</label>
+                                        <input type="email" class="form-control" id="inputEmail4"
+                                               placeholder="Email">
+                                    </div>
+                                    <div class="form-group col-md-6 mb-3 mb-lg-0">
+                                        <label for="inputPassword4">Password</label>
+                                        <input type="password" class="form-control" id="inputPassword4"
+                                               placeholder="Password">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputCity">City</label>
+                                        <input type="text" class="form-control" id="inputCity">                                      </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="inputState">State</label>
+                                        <select id="inputState" class="form-control">
+                                            <option selected>Choose...</option>
+                                            <option>...</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="inputZip">Zip</label>
+                                        <input type="text" class="form-control" id="inputZip">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <footer class="card-footer">
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <button class="btn btn-primary modal-confirm">Submit</button>
+                                    <button class="btn btn-default modal-dismiss">Cancel</button>
+                                </div>
+                            </div>
+                        </footer>
+                    </section>
+                </div> <!-- end inventory -->
+                <!-- start modal carnival -->
+                <div id="carnival" class="modal-block modal-block-primary mfp-hide">
+                    <section class="card">
+                        <button class="close">X</button>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="games-left">
+                                    <a class="modal-with-form" href="#games-chance">Chance Games</a>
+                                </div>
+                                <div class="games-right">
+                                    <a class="modal-with-form" href="#games-challenge">Challenge Games</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div> <!-- end carnival -->
+                <div id="games-chance" class="modal-block modal-block-primary mfp-hide">
+                    <section class="card">
+                        <a class="nav-link modal-with-form d-flex justify-content-between align-items-center" href="#carnival">Back</a>
+                        <button class="close">X</button>
+                        <div class="card-cardBody">
+                            <div class="row">
+                                <div class="games-chance games-types">
+                                    <h3>Chance 1</h3>
+                                </div>
+                                <div class="games-chance games-types">
+                                    <h3>Chance 2</h3>
+                                </div>
+                                <div class="games-chance games-types">
+                                    <h3>Chance 3</h3>
+                                </div>
+                                <div class="games-chance games-types">
+                                    <h3>Chance 4</h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="games-chance games-types">
+                                    <h3>Chance 5</h3>
+                                </div>
+                                <div class="games-chance games-types">
+                                    <h3>Chance 6</h3>
+                                </div>
+                                <div class="games-chance games-types">
+                                    <h3>Chance 7</h3>
+                                </div>
+                                <div class="games-chance games-types">
+                                    <h3>Chance 8</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div> <!-- end carnival -->
+                <div id="games-challenge" class="modal-block modal-block-primary mfp-hide">
+                    <section class="card">
+                        <a class="nav-link modal-with-form d-flex justify-content-between align-items-center" href="#carnival">Back</a>
+                        <button class="close">X</button>
+                        <div class="card-cardBody">
+                            <div class="row">
+                                <div class="games-challenge games-types">
+                                    <h3>Challenge 1</h3>
+                                </div>
+                                <div class="games-challenge games-types">
+                                    <h3>Challenge 2</h3>
+                                </div>
+                                <div class="games-challenge games-types">
+                                    <h3>Challenge 3</h3>
+                                </div>
+                                <div class="games-challenge games-types">
+                                    <h3>Challenge 4</h3>
+                                </div>
+                            </div>
+                            <div class="row"></div>
+                            <div class="row">
+                                <div class="games-challenge games-types">
+                                    <h3>Challenge 5</h3>
+                                </div>
+                                <div class="games-challenge games-types">
+                                    <h3>Challenge 6</h3>
+                                </div>
+                                <div class="games-challenge games-types">
+                                    <h3>Challenge 7</h3>
+                                </div>
+                                <div class="games-challenge games-types">
+                                    <h3>Challenge 8</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div> <!-- end carnival -->
+            </div> <!-- end modals -->
+        </div> <!-- end nano -->
+
+    </aside>
+
+    <!-- end: sidebar -->
+
+    {% if messages %}
+    {% for message in messages %}
+    <b>{{message}}</b>
+    {% endfor %}
+    {% endif %}
+
+    <!--Initialized before body-->
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/jquery-datatable/jquery.dataTables.min.js') }}" defer type="text/javascript"></script>
+
+    {% block body %}
+    {% endblock %}
+
+    <!-- Vendor -->
+
+    <script src="{{ url_for('static', filename='vendor/jquery-browser-mobile/jquery.browser.mobile.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/popper/umd/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/common/common.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/nanoscroller/nanoscroller.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/magnific-popup/jquery.magnific-popup.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/jquery-placeholder/jquery-placeholder.js') }}"></script>
+
+    <!-- Specific Page Vendor -->
+    <script src="{{ url_for('static', filename='vendor/jquery-ui/jquery-ui.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='vendor/jqueryui-touch-punch/jqueryui-touch-punch.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/jquery-appear/jquery-appear.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap-multiselect/bootstrap-multiselect.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/flot/jquery.flot.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/flot.tooltip/flot.tooltip.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/flot/jquery.flot.pie.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/flot/jquery.flot.categories.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/flot/jquery.flot.resize.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/jquery-sparkline/jquery-sparkline.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/raphael/raphael.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/morris/morris.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/gauge/gauge.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/snap.svg/snap.svg.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/liquid-meter/liquid.meter.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/jqvmap/jquery.vmap.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/jqvmap/data/jquery.vmap.sampledata.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/jqvmap/maps/jquery.vmap.world.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/jqvmap/maps/continents/jquery.vmap.africa.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/jqvmap/maps/continents/jquery.vmap.asia.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/jqvmap/maps/continents/jquery.vmap.australia.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/jqvmap/maps/continents/jquery.vmap.europe.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/jqvmap/maps/continents/jquery.vmap.north-america.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/jqvmap/maps/continents/jquery.vmap.south-america.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='vendor/select2/js/select2.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/pnotify/pnotify.custom.js') }}"></script>
+
+    <!-- CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
+    <script type="text/javascript" src="http://rawgit.com/vitmalina/w2ui/master/dist/w2ui.min.js"></script>
+
+    <!-- Theme Base, Components and Settings -->
+    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+
+    <!-- Theme Custom -->
+    <script src="{{ url_for('static', filename='js/global.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/social.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/queue.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+    {# <script src="static/js/settings.js"></script> #}
+
+
+    <!-- Theme Initialization Files -->
+    <script src="{{ url_for('static', filename='js/theme.init.js') }}"></script>
+
+    <!-- Examples -->
+    <script src="{{ url_for('static', filename='js/examples/examples.dashboard.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/examples/examples.modals.js') }}"></script>
+
+    {% block jquery %}
+    {% endblock %}
+
+</div>
+
+</body>
+</html>

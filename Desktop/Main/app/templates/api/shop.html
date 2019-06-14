@@ -1,0 +1,339 @@
+{% extends 'api/base.html' %}
+
+{% block body %}
+
+<section role="main" class="content-body">
+		<!-- start: page -->
+	  <div class="row">
+			<section class="card" style="width: 100%; height: 600px;">
+					<header class="card-header"><h3>Shop</h3></header>
+					<div class="card-body">
+						<div class="gem-buttons">
+							<div class="row-buttons">
+								<button class="gem-button" data-toggle="modal" data-target="#exampleModal" >
+									<span class="gem-title"></span>
+									<span class="gem-price">$4.99</span>
+								</button>
+								<button class="gem-button" data-toggle="modal" data-target="#exampleModal" >
+									<span class="gem-title"></span>
+									<span class="gem-price">$4.99</span>
+								</button>
+								<button class="gem-button" data-toggle="modal" data-target="#exampleModal" >
+									<span class="gem-title"></span>
+									<span class="gem-price">$4.99</span>
+								</button>
+								<button class="gem-button" data-toggle="modal" data-target="#exampleModal" >
+									<span class="gem-title"></span>
+									<span class="gem-price">$4.99</span>
+								</button>
+							</div>
+							<div class="row-buttons">
+								<button class="gem-button" data-toggle="modal" data-target="#exampleModal" >
+									<span class="gem-title"></span>
+									<span class="gem-price">$4.99</span>
+								</button>
+								<button class="gem-button" data-toggle="modal" data-target="#exampleModal" >
+									<span class="gem-title"></span>
+									<span class="gem-price">$4.99</span>
+								</button>
+								<button class="gem-button" data-toggle="modal" data-target="#exampleModal" >
+									<span class="gem-title"></span>
+									<span class="gem-price">$4.99</span>
+								</button>
+								<button class="gem-button" data-toggle="modal" data-target="#exampleModal" >
+									<span class="gem-title"></span>
+									<span class="gem-price">$4.99</span>
+								</button>
+							</div>
+						</div>
+						<!-- Modal -->
+					</div>
+			</section>
+		</div>
+
+		<div id="tier-group" class="row">
+			<div class="tabs-header">
+				<a id="prize-plus" class="button parallelogram active" onclick="changeInventoryItems('prize-plus');">
+				  <span class="skew-fix">Prize+</span>
+				</a>
+				<a id="prizes" class="button parallelogram" onclick="changeInventoryItems('prizes');">
+				  <span class="skew-fix">Prizes</span>
+				</a>
+				<div id="groups" class="dropdown">
+				  <!-- <span class="skew-fix">Groups</span> -->
+				  <button class="button parallelogram dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Groups</button>
+				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				  	<a class="dropdown-item"  onclick="changeInventoryItems('groups');">Group1</a>
+				  	<a class="dropdown-item"  onclick="changeInventoryItems('groups');">Group2</a>
+				  	<a class="dropdown-item"  onclick="changeInventoryItems('groups');">Group3</a>
+				  	<a class="dropdown-item"  onclick="changeInventoryItems('groups');">Group4</a>
+				  	<a class="dropdown-item"  onclick="changeInventoryItems('groups');">Group5</a>
+				  	<a class="dropdown-item"  onclick="changeInventoryItems('groups');">Group6</a>
+				  	<a class="dropdown-item"  onclick="changeInventoryItems('groups');">Group7</a>
+				  	<a class="dropdown-item"  onclick="changeInventoryItems('groups');">Group8</a>
+				  </div>
+				</div>
+			</div>
+			<div class="tabs-content">
+				<span class="sub-title-tier">Tier 8</span>
+				<div class="inventory-slider">
+					<div class="carousel">
+						<div class="inventory-item">
+							<img />
+							<span class="inventory-title">Prizes1</span>
+						</div>
+						<div class="inventory-item">
+							<img />
+							<span class="inventory-title">Prizes2</span>
+						</div>
+						<div class="inventory-item">
+							<img />
+							<span class="inventory-title">Prizes3</span>
+						</div>
+						<div class="inventory-item">
+							<img />
+							<span class="inventory-title">Prizes4</span>
+						</div>
+						<div class="inventory-item">
+							<img />
+							<span class="inventory-title">Prizes5</span>
+						</div>
+						<div class="inventory-item">
+							<img />
+							<span class="inventory-title">Prizes6</span>
+						</div>
+						<div class="inventory-item">
+							<img />
+							<span class="inventory-title">Prizes7</span>
+						</div>
+						<div class="inventory-item">
+							<img />
+							<span class="inventory-title">Prizes8</span>
+						</div>
+						<div class="inventory-item">
+							<img />
+							<span class="inventory-title">Prizes9</span>
+						</div>
+						<div class="inventory-item">
+							<img />
+							<span class="inventory-title">Prizes10</span>
+						</div>
+						<div class="inventory-item">
+							<img />
+							<span class="inventory-title">Prizes11</span>
+						</div>
+						<div class="inventory-item">
+							<img />
+							<span class="inventory-title">Prizes12</span>
+						</div>
+					    <!-- <img src="http://fakeimg.pl/150x120/FFF/121212/?text=destination1&font=lobster" width="150" height="120" alt="destination">
+					    <img src="http://fakeimg.pl/150x120/FFF/121212/?text=destination2&font=lobster" width="150" height="120" alt="destination">
+					    <img src="http://fakeimg.pl/150x120/FFF/121212/?text=destination3&font=lobster" width="150" height="120" alt="destination">
+					    <img src="http://fakeimg.pl/150x120/FFF/121212/?text=destination4&font=lobster" width="150" height="120" alt="destination">
+					    <img src="http://fakeimg.pl/150x120/FFF/121212/?text=destination5&font=lobster" width="150" height="120" alt="destination">
+					    <img src="http://fakeimg.pl/150x120/FFF/121212/?text=destination6&font=lobster" width="150" height="120" alt="destination">
+					    <img src="http://fakeimg.pl/150x120/FFF/121212/?text=destination7&font=lobster" width="150" height="120" alt="destination">
+					    <img src="http://fakeimg.pl/150x120/FFF/121212/?text=destination8&font=lobster" width="150" height="120" alt="destination">
+					    <img src="http://fakeimg.pl/150x120/FFF/121212/?text=destination9&font=lobster" width="150" height="120" alt="destination"> -->
+				    </div>
+				</div>
+			</div>
+		</div>
+</section>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close btn-close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Woohoo, you're reading this text in a modal!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-close">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block jquery %}
+<script type="text/javascript">
+	$('.btn-close').click(() => {
+		$('#exampleModal').modal('hide');
+	});
+
+	var slickopts = {
+
+		arrows: true,
+		prevArrow: "<a class='prev-arrow'>&#10094;</a>",
+		nextArrow: "<a class='next-arrow'>&#10095;</a>",
+		slidesToShow: 4,
+		slidesToScroll: 4,
+		rows: 2, // Removes the linear order. Would expect card 5 to be on next row, not stacked in groups.
+		responsive: [
+			{ 
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 3
+				}
+			},
+			{ 
+				breakpoint: 776,
+				settings: {
+					slidesToShow: 1,
+				rows: 1 // This doesn't appear to work in responsive (Mac/Chrome)
+			}
+		}]
+	};
+
+	$('.carousel').slick(slickopts);
+
+	var mockupdata = {
+		'prizes': [
+				{
+					"thumb": "prizes-thumbnail",
+					"title": "prizes-title"
+				},
+				{
+					"thumb": "prizes-thumbnail",
+					"title": "prizes-title"
+				},
+				{
+					"thumb": "prizes-thumbnail",
+					"title": "prizes-title"
+				},
+				{
+					"thumb": "prizes-thumbnail",
+					"title": "prizes-title"
+				},
+				{
+					"thumb": "prizes-thumbnail",
+					"title": "prizes-title"
+				},
+				{
+					"thumb": "prizes-thumbnail",
+					"title": "prizes-title"
+				},
+				{
+					"thumb": "prizes-thumbnail",
+					"title": "prizes-title"
+				},
+				{
+					"thumb": "prizes-thumbnail",
+					"title": "prizes-title"
+				},
+				{
+					"thumb": "prizes-thumbnail",
+					"title": "prizes-title"
+				},
+				{
+					"thumb": "prizes-thumbnail",
+					"title": "prizes-title"
+				},
+		],
+		'prize-plus': [
+				{
+					"thumb": "prizes-plus-thumb",
+					"title": "prizes-plus-title"
+				},
+				{
+					"thumb": "prizes-plus-thumb",
+					"title": "prizes-plus-title"
+				},
+				{
+					"thumb": "prizes-plus-thumb",
+					"title": "prizes-plus-title"
+				},
+				{
+					"thumb": "prizes-plus-thumb",
+					"title": "prizes-plus-title"
+				},
+				{
+					"thumb": "prizes-plus-thumb",
+					"title": "prizes-plus-title"
+				},
+				{
+					"thumb": "prizes-plus-thumb",
+					"title": "prizes-plus-title"
+				},
+				{
+					"thumb": "prizes-plus-thumb",
+					"title": "prizes-plus-title"
+				},
+				{
+					"thumb": "prizes-plus-thumb",
+					"title": "prizes-plus-title"
+				},
+				{
+					"thumb": "prizes-plus-thumb",
+					"title": "prizes-plus-title"
+				},
+				{
+					"thumb": "prizes-plus-thumb",
+					"title": "prizes-plus-title"
+				},
+		],
+		'groups': [
+				{
+					"thumb": "groups-thumb",
+					"title": "groups-title"
+				},
+				{
+					"thumb": "groups-thumb",
+					"title": "groups-title"
+				},
+				{
+					"thumb": "groups-thumb",
+					"title": "groups-title"
+				},
+				{
+					"thumb": "groups-thumb",
+					"title": "groups-title"
+				},
+				{
+					"thumb": "groups-thumb",
+					"title": "groups-title"
+				},
+				{
+					"thumb": "groups-thumb",
+					"title": "groups-title"
+				},
+				{
+					"thumb": "groups-thumb",
+					"title": "groups-title"
+				},
+				{
+					"thumb": "groups-thumb",
+					"title": "groups-title"
+				},
+				{
+					"thumb": "groups-thumb",
+					"title": "groups-title"
+				},
+				{
+					"thumb": "groups-thumb",
+					"title": "groups-title"
+				},
+		],
+	};
+
+	changeInventoryItems = (key) => {
+		// Remove old Data
+		$('.carousel').slick('unslick').slick('unslick');
+		addNewData(key);
+		$('.carousel').slick(slickopts);
+	};
+
+	addNewData = (key) => {
+		for ( var i = 0 ; i < mockupdata[key].length; i ++ ) {
+			var newDataItem = "<div class='inventory-item'><img /><span class='inventory-title'>"+mockupdata[key][i]['title']+"</span></div>";
+			$('.carousel').append(newDataItem);
+		}
+	};
+</script>
+{% endblock %}

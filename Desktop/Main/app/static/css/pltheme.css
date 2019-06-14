@@ -1,0 +1,65 @@
+#matchCreate {
+    /*
+    margin:opx auto!important;
+    max-width:900px;
+    */
+    max-width: 850px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#matchCreate button {
+    margin-top: -10px;
+}
+
+#matchCreate .card-body {
+    margin-top: -2px;
+    /*background: #dcdcdc;*/
+    padding: 30px;
+    /*max-height: calc(100vh - 150px);*/
+    overflow-y: auto;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.modern-select .form-control:after {
+    background-position: -374px -45px;
+}
+
+.nano-disable .nano-content {
+    position: static;
+    overflow: hidden;
+    margin-right: 0!important;
+}
+
+.nano>.nano-content {
+    position: absolute;
+    overflow: scroll;
+    overflow-x: hidden;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.new-form-style textarea.form-control {
+    min-height: 70px!important;
+    resize: none;
+}

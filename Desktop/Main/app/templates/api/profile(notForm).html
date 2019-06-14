@@ -1,0 +1,219 @@
+{% extends 'api/base.html' %}
+
+{% block body %}
+
+<style>
+.user-block .user-img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.picture-form {
+    display: none;
+}
+/*
+.user-picture {
+    cursor: pointer;
+}
+*/
+</style>
+
+<section role="main" class="content-body">
+	<!-- start: page -->
+	<div class="row">
+		<section class="card" style="width: 100%; height: 600px;">
+			<header class="card-header">
+				<div class="card-actions">
+					<h5>{{usr.uname}}</h5>
+					<div class="user-block">
+						<!--
+						<form action="{{ url_for('profile') }}" method="POST" enctype="multipart/form-data" class="picture-form">
+							<input type="file" name="picture" class="picture-file">
+						</form>
+						-->
+						<img class="user-picture user-img" src="{{usr.img}}">
+					</div>
+				</div>
+				<h3 class="card-title">Personal Details</h3>
+			</header>
+			<div class="card-body">
+
+				<div class="dashboard-right pull-right">
+					<div id="account-view">
+
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="dashboard-content-block">
+									<form id="personal-details-form" action="{{ url_for('profile') }}" class="form-block" method="post">
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="form-label">First Name</label>
+													<input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" value="{{usr.firstname}}"><!--disabled=""-->
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="form-label">Last Name</label>
+													<input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" value="{{usr.lastname}}">
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="form-label">Email Address</label>
+													<input type="text" class="form-control" id="email" name="email" placeholder="Email Address" value="{{usr.email}}">
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="form-label">Username</label>
+													<input type="text" class="form-control" id="username" name="username" placeholder="Usernames" value="{{usr.uname}}"><!--readonly-->
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="form-label">State/Province</label>
+													<select id="state" name="state" class="form-control form-select">
+														{% for row in usr.states %}
+															{% if row[0] == usr.state %}
+															<option value="{{row[0]}}" selected>{{row[1]}}</option>
+															{% else %}
+															<option value="{{row[0]}}">{{row[1]}}</option>
+															{% endif %}
+														{% endfor %}
+													</select>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="form-label">ZIP/Postal Code</label>
+													<input type="text" id="zip" name="zip" class="form-control" placeholder="ZIP/Postal Code" value="{{usr.zip}}">
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="form-label">City/Town</label>
+													<input type="text" id="city" name="city" class="form-control" placeholder="City/Town" value="{{usr.city}}">
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="form-label">Country</label>
+													<select id="country" name="country" class="form-control form-select">
+														{% for row in usr.countries %}
+															{% if row[0] == usr.country %}
+															<option selected>{{row[1]}}</option>
+															{% else %}
+															<option >{{row[1]}}</option>
+															{% endif %}
+														{% endfor %}
+												</select>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="form-label">Gender</label>
+													<select id="gender" name="gender" class="form-control form-select">
+														{% for row in usr.genders %}
+															{% if row[0] == usr.gender %}
+															<option value="{{row[0]}}" selected>{{row[1]}}</option>
+															{% else %}
+															<option value="{{row[0]}}">{{row[1]}}</option>
+															{% endif %}
+														{% endfor %}
+													</select>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="form-label">Time Zone</label>
+													<select id="timezone" name="timezone" class="form-control form-select">
+														{% for row in usr.timezones %}
+															{% if row[0] == usr.timezone %}
+															<option selected>{{row[1]}}</option>
+															{% else %}
+															<option >{{row[1]}}</option>
+															{% endif %}
+														{% endfor %}
+													</select>
+												</div>
+											</div>
+										</div>
+										<button type="submit" class="btn btn-primary mt-3">Save Changes</button>
+										<p class="form-notification personal-details-notification"></p>
+									</form>
+								</div>
+							</div>
+						</div>
+
+						<div id="account-data" data-url="personal-details" data-page-name="Personal Details"></div>
+
+						<script>
+
+							$(document).ready(function() {
+								$("#countries").change(function() {
+									updateStateDropdown();
+								});
+								updateStateDropdown();
+
+								$("#personal-details-form").submit(function() {
+									submitPersonalDetailsForm();
+									return false;
+								});
+							});
+
+							function updateStateDropdown() {
+								var country = $("#countries").val();
+								var state_text = $("#state-text");
+								var states_dropdown = $("#states");
+								if (country == "United States of America" || country == "Canada") {
+									//Show States/Provinces dropdown
+									state_text.addClass("hide");
+									states_dropdown.removeClass("hide");
+								} else {
+									//Show an open input field
+									states_dropdown.addClass("hide");
+									state_text.removeClass("hide");
+								}
+							}
+
+							function submitPersonalDetailsForm() {
+								let username = $("[name='username']").val();
+								const data = {
+									"action" : "personal_details",
+									"firstname" : $("[name='firstname']").val(),
+									"lastname" : $("[name='lastname']").val(),
+									"city" : $("[name='city']").val(),
+									"zip" : $("[name='zip']").val(),
+									"gender" : $("[name='gender']").val(),
+									"country" : $("[name='country']").val(),
+									"timezone" : $("[name='timezone']").val(),
+									"state" : $("[name='state-text']").hasClass("hide") ? $("[name='state-select']").val() : $("[name='state-text']").val(),
+									"username" : username
+								};
+								$.ajax({
+									type : "POST",
+									url : "/user/saveAccountInformation",
+									data : data,
+									dataType : "JSON",
+									success : function(resp) {
+										displayFormNotification(resp);
+										if(username) {
+											$("[name='username']").attr("disabled", true);
+										}
+									}
+								});
+							}
+
+						</script>
+					</div>
+				</div>
+
+			</div>
+		</section>
+	</div>
+</section>
+
+{% endblock %}

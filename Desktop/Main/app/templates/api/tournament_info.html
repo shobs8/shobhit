@@ -1,0 +1,60 @@
+<div class="info-page-body">
+    <div class="col-md-6">
+        <div class="Description-box">
+            <h2>Description</h2>
+            <p>
+                {% if tournament.description %}
+                    {{tournament.description}}
+                {% else %}
+                    No description.
+                {% endif %}
+            </p>
+        </div>
+        <div class="Description-box">
+            <h2>Structure</h2>
+            {% if tournament.structures %}
+                {% for structure in tournament.structures %}
+                <a class="card Structure-card">
+                    <h4 class="mt-0">{{loop.index}}. {{structure.name}}</h4>
+                    <p class="mb-0">{{structure.type}}</p>
+                    <ul>
+                        <li>32 Players</li>
+                        <li>12 Players</li>
+                    </ul>
+                  </a>
+              {% endfor %}
+          {% else %}
+          <p>Structure to be determined.</p>
+          {% endif %}
+       </div>
+    </div>
+  <div class="col-md-6">
+      <div class="Description-box">
+          <h2>Timezone</h2>
+          <p> {{tournament.timezone}} </p>
+      </div>
+      <div class="Description-box">
+          <h2>Prize</h2>
+          <p>
+             {{tournament.prize|safe}}
+          </p>
+      </div>
+      <div class="Description-box">
+          <h2>Rules</h2>
+          <p>
+              The Tournament Starts At :-  <br>
+              Time :- UTC time 2 AM<br>
+              Date :- 24 Feb 2019<br><br>
+              RULES AND CONDITIONS:-<br><br>
+              1) HACKERS WILL BE DISQUALIFIED IMMEDIATELY.<br><br>
+              2) EMULATOR PLAYERS ARE ALLOWED.<br><br>
+              3) WE WILL BE SPECTATING YOU SO DON'T DO ANYTHING FISHHY.<br><br>
+              4) ROOM ID AND PASSWORD WILL BE GIVEN IN BY EMAIL AFTER THE PAYMENT.<br><br>
+              5) DON'T SHARE ROOM ID AND PASSWORD WITH UNREGISTERED PLAYER OR TEAM.<br><br>
+              6) SCREENSHOTS IS MANDATORY FOR THE PRIZE MONEY AT THE END OF THE GAME.<br><br>
+              CONTACT Email :- vivek312123@gmail.com<br><br>
+              REGISTRATIONS OPEN, So Register yourselves right now by contacting me on:- vivek312123@gmail.com
+          </p>
+      </div>
+  </div>
+</div>

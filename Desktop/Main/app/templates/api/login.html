@@ -1,0 +1,140 @@
+<!doctype html>
+<html class="fixed">
+	<head>
+
+		<!-- Basic -->
+		<meta charset="UTF-8">
+
+		<meta name="keywords" content="HTML5 Admin Template" />
+		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
+		<meta name="author" content="okler.net">
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<!-- Web Fonts  -->
+		<link href="https://fonts.googleapis.com/css?family=OpenSans:300,400,600,700,800|ShadowsIntoLight" rel="stylesheet" type="text/css">
+
+		<!-- static/vendor CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='vendor/animate/animate.css') }}" />
+
+		<link rel="stylesheet" href="{{ url_for('static', filename='vendor/font-awesome/css/fontawesome-all.min.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='vendor/magnific-popup/magnific-popup.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css') }}" />
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css') }}" />
+
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/skins/default.css') }}" />
+
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}" />
+
+		<!-- Head Libs -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='vendor/modernizr/modernizr.js') }}" />
+
+	</head>
+	<body>
+		<!-- start: page -->
+		<section class="body-sign">
+			<div class="center-sign">
+				 {% with messages = get_flashed_messages() %}
+					 {% if messages %}
+						<ul>
+						   {% for message in messages %}
+						   <li>{{ message }}</li>
+						   {% endfor %}
+						</ul>
+					 {% endif %}
+				  {% endwith %}
+				<a href="/" class="logo float-left">
+					<img src="static/img/logo.png" width="115" height="54" alt="Porto Admin" />
+				</a>
+				<div class="panel card-sign">
+					<div class="card-title-sign mt-3 text-right">
+						<h2 class="title text-uppercase font-weight-bold m-0"><i class="fas fa-user mr-1"></i>Login</h2>
+					</div>
+				</div>
+				<div class="card-body">
+					<form action="" method="post">
+						{{ form.hidden_tag() }}
+						<div class="form-group mb-3">
+							{{ form.username.label }}
+							<div class="input-group">
+								{{ form.username(class="form-control form-control-lg",size=32) }}<br>
+								{% for error in form.username.errors %}
+										<span style="color: red;">[{{ error }}]</span>
+								{% endfor %}
+								<span class="input-group-append">
+									<span class="input-group-text">
+										<i class="fas fa-user"></i>
+									</span>
+								</span>
+							</div>
+						</div>
+
+						<div class="form-group mb-3">
+							<div class="clearfix">
+								{{ form.pw.label(class="float-left") }}
+								<!--<a href="pages-recover-password.html" class="float-right">Lost Password?</a>-->
+							</div>
+							<div class="input-group">
+								{{ form.pw(class="form-control form-control-lg",size=32) }}<br>
+								{% for error in form.pw.errors %}
+										<span style="color: red;">[{{ error }}]</span>
+								{% endfor %}
+								<span class="input-group-append">
+									<span class="input-group-text">
+										<i class="fas fa-lock"></i>
+									</span>
+								</span>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-8">
+							<!--
+								<div class="checkbox-custom checkbox-default">
+									<input id="RememberMe" name="rememberme" type="checkbox"/>
+									<label for="RememberMe">Remember Me</label>
+								</div>
+							-->
+							</div>
+							<div class="col-sm-4 text-right">
+								{{ form.submit(class="btn btn-primary mt-2") }}
+							</div>
+						</div>
+
+						<p><a href="{{ url_for('api.signup') }}">Click to Register!</a></p>
+					</form>
+				</div>
+
+				<p class="text-center text-muted mt-3 mb-3">&copy; Copyright 2017. All Rights Reserved.</p>
+			</div>
+		</section>
+		<!-- end: page -->
+
+		<!-- Vendor -->
+		<script src="{{ url_for('static', filename='vendor/jquery/jquery.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery-browser-mobile/jquery.browser.mobile.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/popper/umd/popper.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/common/common.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/nanoscroller/nanoscroller.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/magnific-popup/jquery.magnific-popup.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery-placeholder/jquery-placeholder.js') }}"></script>
+
+		<!-- Theme Base, Components and Settings -->
+		<script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+
+		<!-- Theme Custom -->
+		<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+		<!-- Theme Initialization Files -->
+		<script src="{{ url_for('static', filename='js/theme.init.js') }}"></script>
+
+	</body>
+</html>

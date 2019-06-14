@@ -1,0 +1,924 @@
+html,
+body {
+	width: 100%;
+}
+
+html {
+	overflow-x: hidden !important;
+	overflow-y: scroll !important;
+}
+
+body {
+	margin: 0;
+}
+
+/* Layout Base - Header */
+.header {
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+/* Layout Base - Content Body */
+.content-body {
+	display: table-cell;
+	position: relative;
+	vertical-align: top;
+}
+
+.content-body:not(.card-margin) > .row + .row {
+	padding-top: 40px;
+}
+
+/* Layout Base - Sidebar Left */
+.sidebar-left {
+	display: table-cell;
+	position: relative;
+	vertical-align: top;
+	width: 235px;
+	z-index: 1010;
+}
+.sidebar-left-collapsed .content-body {
+	margin-left: 75px;
+}
+
+/* Fix IE Scrollbar Overlaying content */
+@-ms-viewport {
+	width: auto !important;
+}
+
+/* Sidebar Left */
+.sidebar-left .sidebar-header {
+	position: relative;
+	color: #777;
+	height: 50px;
+}
+.sidebar-left .sidebar-header .sidebar-toggle {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 45px;
+	height: 45px;
+	border-radius: 0 0 0 5px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.sidebar-left .sidebar-header .sidebar-toggle i {
+	color: #C3C3C3;
+	font-size: 0.9rem;
+	line-height: 50px;
+	-webkit-transition: all 0.15s ease-in-out;
+	transition: all 0.15s ease-in-out;
+}
+
+/* Nano Scroller Plugin */
+html.no-overflowscrolling .nano {
+	/*height: 100%;*/
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 350px;
+}
+
+html.no-overflowscrolling .nano > .nano-content {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	overflow: hidden;
+	right: 0;
+	top: 0;
+}
+
+html.no-overflowscrolling .nano > .nano-content:focus {
+	outline: none;
+}
+
+html.no-overflowscrolling .nano > .nano-content::-webkit-scrollbar {
+	display: none;
+	visibility: hidden;
+}
+
+html.no-overflowscrolling .nano.has-scrollbar > .nano-content::-webkit-scrollbar {
+	display: block;
+	visibility: visible;
+}
+
+html.no-overflowscrolling .nano > .nano-pane {
+	bottom: 0;
+	position: absolute;
+	opacity: .01;
+	right: 0;
+	top: 0;
+	visibility: hidden\9;
+	/* Target only IE7 and IE8 with this hack */
+	width: 4px;
+	-webkit-transition: .2s;
+	transition: .2s;
+}
+
+html.no-overflowscrolling .nano > .nano-pane > .nano-slider {
+	background: #CCC;
+	margin: 0;
+	position: relative;
+	visibility: hidden;
+}
+
+html.no-overflowscrolling .nano:hover > .nano-pane {
+	opacity: 0.99;
+}
+
+html.no-overflowscrolling .nano:hover > .nano-pane > .nano-slider {
+	visibility: visible;
+}
+
+html.no-overflowscrolling.custom-scroll .nano > .nano-content {
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+/* Header */
+.header .toggle-sidebar-left {
+	background: #CCC;
+	border-radius: 100px;
+	color: #FFF;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	right: 15px;
+	text-align: center;
+	top: 14px;
+	width: 30px;
+}
+
+/* Menu */
+
+ul.nav-main a {
+	text-decoration: none;
+}
+
+ul.nav-main > li > a {
+	padding: 10px;
+}
+
+ul.nav-main li {
+	width: 100%;
+}
+
+ul.nav-main li a {
+	display: block;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+ul.nav-main li.nav-parent {
+	position: relative;
+}
+
+ul.nav-main li.nav-parent > a {
+	cursor: pointer;
+}
+
+ul.nav-main li .nav-children {
+	display: none;
+}
+
+ul.nav-main li .nav-children li a {
+	padding: 6px 15px 6px 57px;
+	overflow: hidden;
+}
+
+ul.nav-main li .nav-children li a:after {
+	padding: 6px 25px;
+}
+
+/* Badges */
+.badge-default {
+	background: #ebebeb;
+	color: #777;
+}
+
+/* Cards */
+.card {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border: none;
+}
+
+.card-header {
+	border-radius: 5px 5px 0 0 !important;
+	border-bottom: 1px solid #DADADA;
+	padding: 18px;
+	position: relative;
+}
+
+.card-title {
+	color: #33353F;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 20px;
+	padding: 0;
+	text-transform: none;
+	margin: 0;
+}
+
+.card-body {
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+	border-radius: 5px;
+}
+
+.card-header + .card-body {
+	border-radius: 0 0 5px 5px;
+}
+
+.card-footer {
+	border-radius: 0 0 5px 5px;
+	margin-top: -5px;
+	background: #FFF;
+}
+
+.card-footer::after {
+	clear: both;
+	content: "";
+	display: block;
+}
+
+/* Forms */
+form label {
+	font-weight: normal;
+}
+
+select {
+	border: 1px solid #E5E7E9;
+	border-radius: 6px;
+	outline: none;
+}
+
+.form-group:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+.form-control:not(.form-control-lg) {
+	font-size: 0.75rem;
+	line-height: 1.3;
+}
+
+.form-control:not(.form-control-sm):not(.form-control-lg) {
+	font-size: 0.85rem;
+	min-height: 2.4rem;
+}
+
+.form-control:focus {
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+	color: #fff;
+}
+
+/* Form - iOS Override */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+	-webkit-appearance: none;
+}
+
+.form-control::-webkit-input-placeholder,
+input[type="text"]::-webkit-input-placeholder,
+input[type="password"]::-webkit-input-placeholder,
+input[type="email"]::-webkit-input-placeholder {
+	color: #bdbdbd;
+}
+
+.form-control::-moz-placeholder,
+input[type="text"]::-moz-placeholder,
+input[type="password"]::-moz-placeholder,
+input[type="email"]::-moz-placeholder {
+	color: #bdbdbd;
+}
+
+.form-control:-ms-input-placeholder,
+input[type="text"]:-ms-input-placeholder,
+input[type="password"]:-ms-input-placeholder,
+input[type="email"]:-ms-input-placeholder {
+	color: #bdbdbd;
+}
+
+/* Form - Bootstrap Override */
+.btn-lg {
+	line-height: 1.334;
+}
+
+/* Form - Custom Fields */
+
+/* Form - Group Override */
+.form-group:after {
+	clear: both;
+	display: block;
+	content: '';
+}
+
+.form-group:last-child, .form-group:last-of-type {
+	margin-bottom: 0;
+}
+
+/* Headings */
+h2, h3, h4 {
+	font-weight: 200;
+	letter-spacing: -1px;
+}
+
+h2 {
+	font-size: 2.25em;
+	font-weight: 500;
+	line-height: 42px;
+}
+
+h3 {
+	font-size: 1.6em;
+	font-weight: 400;
+	letter-spacing: normal;
+	line-height: 24px;
+}
+
+h4 {
+	font-size: 1.3em;
+	font-weight: 400;
+	letter-spacing: normal;
+	line-height: 27px;
+}
+
+h2, h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+h4 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/* Images */
+
+.rounded-circle {
+	border-radius: 50%;
+}
+
+/* Misc */
+body a, body a:focus, body a:hover, body a:active, body a:visited {
+	outline: none !important;
+}
+
+/* Clearfix */
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+/* Dropdown */
+.dropdown-menu .divider {
+	height: 1px;
+	margin: 9px 0;
+	overflow: hidden;
+	background-color: #e5e5e5;
+}
+/* Modals */
+.modal {
+	z-index: 1100;
+}
+
+.modal-block {
+	background: transparent;
+	padding: 0;
+	text-align: left;
+	max-width: 600px;
+	margin: 40px auto;
+	position: relative;
+}
+
+/* Modal Text */
+
+html.dark .modal-content {
+	background-color: #1d2127;
+}
+
+html.dark .modal-header,
+html.dark .modal-footer {
+	border-color: #282d36;
+}
+
+/* Notifications */
+.notifications > li .notification-icon.dropdown-toggle:after {
+	content: none;
+}
+
+.notifications > li .notification-icon i {
+	color: #777;
+	line-height: 30px;
+	vertical-align: middle;
+}
+
+.notifications .badge {
+	background: #D2312D;
+	color: #FFF;
+	font-size: 10px;
+	font-weight: normal;
+	height: 15px;
+	width: 15px;
+	position: absolute;
+	right: -8px;
+	top: -5px;
+	border-radius: 100%;
+}
+
+.notifications > li > a {
+	border: none;
+	display: inline-block;
+}
+
+.notifications .notification-menu {
+	border: none;
+	-webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+	margin: 10px 0 0 0;
+	padding: 0;
+	right: -93px;
+	width: 245px;
+}
+
+.notifications .notification-menu .notification-title {
+	background: #CCC;
+	border-radius: 3px 3px 0 0;
+	color: #FFF;
+	font-size: 0.7rem;
+	line-height: 1.5rem;
+	padding: 8px 6px 8px 12px;
+	text-transform: uppercase;
+}
+
+.notifications .notification-menu .notification-title .badge {
+	font-size: 0.65rem;
+	font-weight: 200;
+	line-height: 14px;
+	margin-left: 10px;
+	margin-top: 2px;
+	min-width: 35px;
+}
+
+.notifications .notification-menu .notification-title .badge-default {
+	background: #006697;
+	color: #FFF;
+}
+
+.notifications .notification-menu .content {
+	padding: 12px;
+}
+
+.notifications .notification-menu .view-more {
+	color: #ACACAC;
+	font-size: 0.7rem;
+	line-height: 1.1rem;
+	text-transform: uppercase;
+}
+
+/* notification menu - pin */
+.notifications .notification-menu:before,
+.notifications .notification-icon:before {
+	border-bottom: 6px solid #CCC;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	content: '';
+	height: 0;
+	margin-right: -3px;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.notifications .notification-menu:before {
+	bottom: 100%;
+	right: 16px;
+}
+
+.notifications .notification-icon:before {
+	display: none;
+	right: 11px;
+	top: 35px;
+	z-index: 9999;
+}
+
+/* notification menu - emails */
+.notification-menu {
+	color: #ACACAC;
+}
+
+.notification-menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.notification-menu li {
+	margin: 0 0 12px;
+}
+
+.notification-menu a {
+	display: block;
+	text-decoration: none;
+}
+
+.notification-menu .image {
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+.notification-menu .image i {
+	border-radius: 35px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	width: 35px;
+}
+
+.notification-menu .title {
+	color: #000011;
+	display: block;
+	font-size: 0.8rem;
+	line-height: 1.1rem;
+	padding: 2px 0 0;
+}
+
+.notification-menu .message {
+	color: #ACACAC;
+	display: block;
+	font-size: 0.7rem;
+	line-height: 1.1rem;
+	padding: 0;
+}
+
+html.dark .notifications > li .notification-icon i {
+	color: #C3C3C3;
+}
+
+/* Scroll to Top */
+html .scroll-to-top {
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	background: #282d36;
+	border-radius: 7px 7px 0 0;
+	bottom: 0px;
+	color: #FFF;
+	display: block;
+	height: 9px;
+	opacity: 0;
+	padding: 5px 10px 25px;
+	position: fixed;
+	right: 10px;
+	text-align: center;
+	text-decoration: none;
+	min-width: 39px;
+	z-index: 1040;
+}
+
+html .scroll-to-top:hover {
+	opacity: 1;
+}
+
+/* Tabs */
+.nav-tabs {
+	margin: 0;
+	padding: 0;
+}
+
+.tab-content {
+	border-radius: 0 0 4px 4px;
+	/*border: 1px solid #EEE;*/
+	border-top: 0;
+}
+
+/* Toggles */
+
+.toggle > label::selection {
+	background: none;
+}
+
+/* Links */
+.userbox {
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+}
+
+.userbox > a {
+	display: inline-block;
+	text-decoration: none;
+}
+
+.userbox a:hover {
+	text-decoration: none;
+}
+
+.userbox .profile-info,
+.userbox .profile-picture {
+	display: inline-block;
+	vertical-align: middle;
+}
+.userbox .name,
+.userbox .role {
+	display: block;
+}
+
+.userbox .role {
+	color: #ACACAC;
+	font-size: 0.7rem;
+	line-height: 0.7rem;
+}
+
+.userbox .custom-caret:before {
+	content: "\f107";
+}
+
+
+@media only screen and (min-width: 768px) {
+	.notifications .notification-menu {
+		/*left: auto !important;*/
+	}
+}
+
+/* Notifications Mobile */
+@media only screen and (max-width: 767px) {
+	.notifications {
+		float: right;
+		margin: 16px 8px 0 0;
+	}
+
+	.notifications > li {
+		position: static;
+	}
+
+	.notifications > li .notification-menu {
+		left: 15px;
+		top: auto;
+		width: 94vw !important;
+		left: 50% !important;
+		-webkit-transform: translate3d(-50%, 109px, 0px) !important;
+		transform: translate3d(-50%, 109px, 0px) !important;
+	}
+
+	.notifications > li .notification-menu:before {
+		display: none;
+	}
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+	/* Pricing Tables */
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+	html .scroll-to-top.hidden-mobile {
+		display: none !important;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.userbox .name,
+	.userbox .role {
+		max-width: 68px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+}
+/* Userbox - Open */
+
+/* Userbox - Mobile */
+@media only screen and (max-width: 767px) {
+	.userbox {
+		float: left;
+		margin: 16px 0 0 12px;
+		position: relative;
+	}
+
+	.userbox:after {
+		background: #E9E9E6;
+		content: '';
+		height: 63px;
+		margin: 0;
+		position: absolute;
+		right: -21px;
+		top: -18px;
+		width: 1px;
+	}
+
+	.userbox .profile-picture {
+		display: none;
+	}
+}
+
+
+ul.simple-post-list li:last-child {
+	border-bottom: 0;
+}
+/* Layout Base - Sidebar Left Opened ( Larger than mobile ) */
+@media only screen and (min-width: 768px) {
+	html.sidebar-left-collapsed .sidebar-left {
+		width: 75px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	html.flexbox .sidebar-left,
+	html.flexbox .content-body,
+	html.flexboxlegacy .sidebar-left,
+	html.flexboxlegacy .content-body {
+		display: block;
+		-ms-flex-negative: 0;
+		flex-shrink: 0;
+	}
+	html.flexbox .content-body,
+	html.flexboxlegacy .content-body {
+		-webkit-box-flex: 2;
+		-ms-flex: 2;
+		flex: 2;
+		min-width: 1px;
+	}
+}
+/* Layout Fixed */
+@media only screen and (min-width: 768px) {
+	/* Layout Fixed - Reseting Styles */
+	html.fixed .sidebar-left,
+	html.fixed .content-body {
+		display: block;
+	}
+
+	/* Layout Fixed - Header */
+	html.fixed .header {
+		position: fixed;
+		z-index: 1020;
+	}
+	/* Layout Fixed - Sidebar Left */
+	html.fixed .sidebar-left {
+		bottom: 0;
+		left: 0;
+		padding-bottom: 50px;
+		position: fixed;
+		top: 45px;
+	}
+
+	html.fixed .sidebar-left .nano-content {
+		padding-bottom: 50px;
+	}
+}
+
+/* Layout Boxed - larger or equal min width */
+
+/*@media only screen and (max-width: 767px) {*/
+/*body {*/
+/*min-height: 100vh;*/
+/*}*/
+/*.sidebar-left,*/
+/*.content-body {*/
+/*display: block;*/
+/*}*/
+/*.header {*/
+/*background: none;*/
+/*border: none;*/
+/*height: auto;*/
+/*position: static;*/
+/*}*/
+
+/*.header .logo-container {*/
+/*height: 60px;*/
+/*left: 0;*/
+/*position: fixed;*/
+/*right: 0;*/
+/*top: 0;*/
+/*z-index: 99;*/
+/*}*/
+
+/*.header .header-right {*/
+/*background: #FFF;*/
+/*float: none !important;*/
+/*height: 60px;*/
+/*margin-top: 60px;*/
+/*width: 100%;*/
+/*}*/
+
+/*.content-body {*/
+/*padding: 0 15px 15px;*/
+/*}*/
+/*.sidebar-left {*/
+/*bottom: 0;*/
+/*left: -100%;*/
+/*min-height: 0;*/
+/*min-width: 100vw;*/
+/*padding-top: 60px;*/
+/*padding-bottom: 50px;*/
+/*position: fixed;*/
+/*overflow: hidden;*/
+/*top: 0;*/
+/*z-index: 98 !important;*/
+/*}*/
+
+/*html.csstransforms .sidebar-left {*/
+/*-webkit-transition-property: margin;*/
+/*transition-property: margin;*/
+/*-webkit-transition-duration: .25s;*/
+/*transition-duration: .25s;*/
+/*-webkit-transition-timing-function: ease-out;*/
+/*transition-timing-function: ease-out;*/
+/*-webkit-transition-delay: 0;*/
+/*transition-delay: 0;*/
+/*}*/
+
+/*html.csstransforms .sidebar-left {*/
+/*margin-left: -25px;*/
+/*}*/
+
+/*!* If desktop is seeing mobile res, fix scrollbars *!*/
+/*html.no-mobile-device body {*/
+/*min-height: 0;*/
+/*}*/
+/*}*/
+
+
+/* Unstyle nano for non fixed layouts */
+
+@media only screen and (min-width: 768px) {
+	html.sidebar-left-collapsed .sidebar-left .sidebar-toggle {
+		border-radius: 0;
+	}
+
+	html.sidebar-left-collapsed .sidebar-left .nav-main > li > a {
+		overflow: hidden;
+		text-overflow: clip;
+	}
+
+	html.sidebar-left-collapsed .sidebar-left .nav-main li.nav-parent a:after {
+		display: none;
+	}
+
+	html.sidebar-left-collapsed .sidebar-left .nav-main li.nav-parent > ul.nav-children {
+		display: none;
+	}
+
+	html.sidebar-left-collapsed .sidebar-left .nav-main a span {
+		/*visibility: hidden;*/
+	}
+
+	html.sidebar-left-collapsed .sidebar-left .separator {
+		display: none;
+	}
+	html.sidebar-left-collapsed .sidebar-left .nano:hover .nav-main li.nav-parent a:after {
+		display: inline-block;
+	}
+
+	html.sidebar-left-collapsed .sidebar-left .nano:hover .nav-main li a span {
+		visibility: visible;
+	}
+
+	html.sidebar-left-collapsed .sidebar-left .nano:hover .separator {
+		display: block;
+	}
+	.sidebar-left .nav-expanded .nav-children {
+		display: block;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	html.no-overflowscrolling .sidebar-left .nano > .nano-content {
+		overflow: scroll !important;
+		overflow-x: hidden !important;
+	}
+}
+
+/* Header Mobile */
+@media only screen and (max-width: 767px) {
+	.header .logo-container {
+		background-image: -webkit-gradient(linear, left top, left bottom, from(#F6F6F6), color-stop(45%, #FFFFFF));
+		background-image: linear-gradient(#F6F6F6 0%, #FFFFFF 45%);
+		border-bottom: 1px solid #E9E9E6;
+		border-top: 3px solid #EDEDED;
+	}
+	.header .logo-container .logo {
+		float: none;
+		display: inline-block;
+		line-height: 57px;
+		margin-top: 0;
+	}
+
+	.header .search {
+		display: none;
+	}
+}

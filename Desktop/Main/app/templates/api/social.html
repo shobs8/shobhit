@@ -1,0 +1,418 @@
+{% extends 'api/base.html' %}
+
+{% block body %}
+
+<section role="main" class="content-body">
+    <!-- start: page -->
+    <div class="row accordion-gradient-bcg d-flex justify-content-center">
+
+        <!-- Grid column -->
+        <div class="col-md-12 col-xl-12 py-5">
+	            <div class="accordion md-accordion accordion-2 collapse-custom" id="accordionEx7-custom" role="tablist" aria-multiselectable="true">
+
+	                <!-- Accordion cards -->
+	                <div class="social-card">
+
+	                    <!-- Card header -->
+	                    <div class="social-header rgba-stylish-strong z-depth-1 topnav Community-top" role="tab" id="heading1">
+													<div class="search-container">
+														<form action="">
+															<input type="text" placeholder="Search.." name="search">
+															<button type="submit"><i class="fa fa-search"></i></button>
+														</form>
+													</div>
+	                        <a class="Community-top-a" data-toggle="collapse" data-parent="#accordionEx7" href="#collapse1" aria-expanded="true"
+	                        aria-controls="collapse1">
+
+	                            <h5 class="mb-0 white-text font-thin text-center">
+	                            Community
+															<i class="fa fa-caret-down  rotate-icon pull-right" aria-hidden="true"></i>
+	                            </h5>
+													</a>
+													<a href="#matchThread" class="myBtn btn btn btn-primary" style="margin-left: 0px; width:100px;">Thread</a>
+
+													<div  id="myModal_thread" class="modal">
+														<!-- Modal content -->
+														<div class="modal-content">
+															<span class="close">&times;</span>
+															<header class="social-header">
+																<h2 class="social-title">Thread</h2>
+															</header>
+
+															<div class="grid-item-popup-content col-md-12  float-left">
+																<form action="/social" method="post" enctype="multipart/form-data" class="thread-create-form" style="color: white;">
+																	{{ form.hidden_tag() }}
+																	<div class="form-row">
+							                        <div class="form-group col-md-8 p-0">
+    																			<div class="form-group col-md-2 float-left">
+    																				{{ form.title.label }}
+    																			</div>
+    																			<div class="form-group col-md-10 float-right">
+    																				{{ form.title(class="form-control") }}
+    																				{% for error in form.title.errors %}
+    																					<span style="color: red;">[{{ error }}]</span>
+    																				{% endfor %}
+    																			</div>
+							                        </div>
+                                      <div class="form-group col-md-3 p-0">
+                                          <div class="form-group col-md-10">
+                                              {{ form.cat(class="form-control") }}
+                                              {% for error in form.cat.errors %}
+                                              <span style="color: red;">[{{ error }}]</span>
+                                              {% endfor %}
+                                          </div>
+                                      </div>
+																	</div>
+																	<div class="form-row">
+																		<div class="form-group col-md-12 p-0">
+																			<div class="form-group col-md-10 float-right">
+																				{{ form.description(class="form-control", rows="4", cols="50") }}
+																				{% for error in form.description.errors %}
+																					<span style="color: red;">[{{ error }}]</span>
+																				{% endfor %}
+																			</div>
+																		</div>
+																	</div>
+																	<div class="form-row">
+							                                            <div class="form-group col-md-12 p-0">
+																			<div class="form-group col-md-2 float-left">
+																				{{ form.hashtag.label }}
+																			</div>
+																			<div class="form-group col-md-10 float-right">
+																				{{ form.hashtag(class="form-control") }}
+																				{% for error in form.hashtag.errors %}
+																					<span style="color: red;">[{{ error }}]</span>
+																				{% endfor %}
+																			</div>
+							                                            </div>
+																	</div>
+																	<div class="form-row">
+																		<div class="form-group col-md-12 text-center">
+																			<label class="btn btn-primary">
+																				Upload Video/Image
+																				{{ form.image(style="display:none", onchange="this.form.submit()") }}
+																			</label>
+																		</div>
+																	</div>
+																</form>
+															</div>
+														</div>
+
+													</div>
+	                    </div>
+
+	                    <!-- Card body -->
+	                    <div id="collapse1" class="collapse show" role="tabpanel" aria-labelledby="heading1" data-parent="#accordionEx7">
+													<div class="collapse-main">
+														<h2 class="mb-0 white-text font-thin text-center">Popular Threads</h2>
+														<div class="row-radios mf-rr" id="collapse1-content">
+															<div class="social-body-custom">
+																<div class="row">
+																	{% for key in context.threads %}
+																	<div class="col-lg-3 col-xxxs thread-holder" data-thread="{{ context.threads[key].uid }}">
+																		<div class="collapse1-content-item">
+																			<h2>{{ context.threads[key].title|title}}</h2>
+																			<div class="collapse1-content-item-img">
+																				<img class="thread-image" src="{{ context.threads[key].image }}" draggable="true" ondragstart="drag(event)" >
+																				<a class="rr-value1" href="#" >Link</a>
+																				<a class="rr-value2" href="#">#{{ context.threads[key].hashtag }}</a>
+																			</div>
+																			<div class="collapse1-content-item-right-new collapse1-content-item-right-toggle">
+																				<div class="collapse1-content-item-right-row">
+
+																					<div class="collapse1-content-item-right">
+																						<span><img src="static/img/ava.png">Username</span>
+																						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+																					</div>
+																				</div>
+																				<div class="collapse1-content-item-right-row">
+
+																					<div class="collapse1-content-item-right">
+																						<span><img src="static/img/ava.png">Username</span>
+																						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+																					</div>
+																				</div>
+																				<div class="collapse1-content-item-right-row">
+
+																					<div class="collapse1-content-item-right">
+																						<span><img src="static/img/ava.png">Username</span>
+																						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+																					</div>
+																				</div>
+																			</div>
+																			<h6 class="col-md-12  float-left p-0">{{ context.threads[key].description|truncate(35) }}</h6>
+																		</div>
+																		<div class="collapse1-content-item-pop" style="display:none;" data-thread="{{ context.threads[key].uid }}">
+																			<span class="close-pop">&times;</span>
+																			<div class="col-lg-12 float-left p-0">
+																				<div class="col-lg-8 float-left">
+																					<div class="collapse1-content-item-top col-md-12  float-left p-0">
+																						<div class="grid-item-popup-content col-md-12 p-0 float-left">
+																							<div class="col-md-12  float-left p-0">
+																								<div class="form-row-main">
+																									<div class="form-group-main col-md-12 p-0">
+																										<div class="form-group-main col-md-1 p-0 float-left">
+																											<label for="Title"></label>
+																										</div>
+																										<div class="form-group-main col-md-11 float-right follow-btn">
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="collapse1-content-item-img col-md-12  float-left p-0">
+																						<img id="img_1" draggable="true" ondragstart="drag(event)" >
+																						<a class="rr-value1" href="#" >Link</a>
+																						<a class="rr-value2" href="#"></a>
+																					</div>
+																					<h6 class="col-md-12  float-left p-0"></h6>
+																					<div class="form-group-main col-md-12 p-0 float-left">
+																						<a href="#myModalTopic" class="myBtn btn btn btn-primary" style="margin-left: 0px; ">Respond to Topic</a>
+																						<div  id="myModalTopic" class="modal respond-to-topic-modal">
+																							<!-- Modal content -->
+																							<div class="modal-content">
+																								<span class="close">&times;</span>
+																								<header class="social-header">
+																									<h2 class="social-title">Respond to Topic</h2>
+																								</header>
+																								<div class="grid-item-popup-content-4 col-md-12  float-left">
+																									<form action="" method="post" enctype="multipart/form-data">
+																										<div class="form-row">
+																											<div class="form-group col-md-12 p-0">
+																												<input type="hidden" name="thread" value="{{context.threads[key].uid}}">
+																												<textarea class="form-control" name="message" rows="4" cols="50"></textarea>
+																											</div>
+																										</div>
+																										<div class="form-row">
+																											<div class="form-group col-md-12 p-0">
+																												<label for="file">Select a file</label>
+							        																			<input name="file" type="file">
+																											</div>
+																										</div>
+																										<div class="form-row">
+																											<div class="form-group col-md-12 p-0 text-center">
+																												<a class="myBtn btn btn btn-primary" style="margin-left: 0px; ">Respond to Topic</a>
+																											</div>
+																										</div>
+																									</form>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="col-lg-4 float-left">
+																					<div class="collapse1-content-item-right messages">
+																					</div>
+																					<div class="grid-item-popup-content-4 col-md-12  p-0 float-left">
+																						<form action="" method="post" enctype="multipart/form-data" class="respond-to-author-form">
+																							<div class="form-row">
+																								<div class="form-group col-md-12 p-0">
+																									<input type="hidden" name="thread" value="{{ context.threads[key].uid }}">
+																									<textarea class="form-control" rows="4" cols="50" name="message"></textarea>
+																								</div>
+																							</div>
+																							<div class="form-row">
+																								<div class="form-group col-md-12 p-0 text-center">
+																									<a href="#" class="myBtn btn btn btn-primary" style="margin-left: 0px; ">Respond to Author</a>
+																								</div>
+																							</div>
+																						</form>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	{% endfor %}
+																</div>
+															</div>
+														</div>
+														<div class="all-thread-popup">
+															<div class="collapse1-content-item-pop" style="display:none;">
+																<span class="close-pop">&times;</span>
+																<div class="col-lg-12 float-left p-0">
+																	<div class="col-lg-8 float-left">
+																		<div class="collapse1-content-item-top col-md-12  float-left p-0">
+																			<div class="grid-item-popup-content col-md-12 p-0 float-left">
+																				<div class="col-md-12  float-left p-0">
+																					<div class="form-row-main">
+																						<div class="form-group-main col-md-12 p-0">
+																							<div class="form-group-main col-md-1 p-0 float-left">
+																								<label for="Title"></label>
+																							</div>
+																							<div class="form-group-main col-md-11 float-right follow-btn">
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="collapse1-content-item-img col-md-12  float-left p-0">
+																			<img id="img_1" draggable="true" ondragstart="drag(event)" >
+																			<a class="rr-value1" href="#" >Link</a>
+																			<a class="rr-value2" href="#"></a>
+																		</div>
+																		<h6 class="col-md-12  float-left p-0"></h6>
+																		<div class="form-group-main col-md-12 p-0 float-left">
+																			<a href="#myModalTopic" class="myBtn btn btn btn-primary" style="margin-left: 0px; ">Respond to Topic</a>
+																			<div  id="myModalTopic" class="modal respond-to-topic-modal">
+																				<!-- Modal content -->
+																				<div class="modal-content">
+																					<span class="close">&times;</span>
+																					<header class="social-header">
+																						<h2 class="social-title">Respond to Topic</h2>
+																					</header>
+																					<div class="grid-item-popup-content-4 col-md-12  float-left">
+																						<form action="" method="post" enctype="multipart/form-data">
+																							<div class="form-row">
+																								<div class="form-group col-md-12 p-0">
+																									<input type="hidden" name="thread">
+																									<textarea name="message" class="form-control" rows="4" cols="50"></textarea>
+																								</div>
+																							</div>
+																							<div class="form-row">
+																								<div class="form-group col-md-12 p-0">
+																									<label for="file">Select a file</label>
+																									<input name="file" type="file">
+																								</div>
+																							</div>
+																							<div class="form-row">
+																								<div class="form-group col-md-12 p-0 text-center">
+																									<a class="myBtn btn btn btn-primary" style="margin-left: 0px; ">Respond to Topic</a>
+																								</div>
+																							</div>
+																						</form>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="col-lg-4 float-left">
+																		<div class="collapse1-content-item-right messages">
+																		</div>
+																		<div class="grid-item-popup-content-4 col-md-12  p-0 float-left">
+																			<form action="" method="post" enctype="multipart/form-data" class="respond-to-author-form">
+																				<div class="form-row">
+																					<div class="form-group col-md-12 p-0">
+																						<input type="hidden" name="thread">
+																						<textarea name="message" class="form-control" rows="4" cols="50"></textarea>
+																					</div>
+																				</div>
+																				<div class="form-row">
+																					<div class="form-group col-md-12 p-0 text-center">
+																						<a href="#" class="myBtn btn btn btn-primary" style="margin-left: 0px; ">Respond to Author</a>
+																					</div>
+																				</div>
+																			</form>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="collapse-main-Boards collapse-main">
+														<h2 class="mb-0 white-text font-thin text-center">Boards</h2>
+														<div class="row-radios mf-rr" >
+															<div class="social-body-custom">
+																<div class="row">
+																	{% for category in context.categories %}
+																	<div class="col-lg-3 col-xxxs">
+																		<h5 class="mb-0 white-text  font-thin text-center" data-category="{{ category.uid }}">
+																			{{ category.name }}
+																		</h5>
+																		<div class="collapse1-content-category-pop" style="display:none;">
+																			<span class="close-pop-category ">&times;</span>
+																			<div class="table-main col-lg-12 float-left p-0">
+																				<table class="table">
+																					<thead>
+																						<tr>
+																							<th>Thread</th>
+																							<th>Category</th>
+																							<th>Autho</th>
+																							<th>Replies</th>
+																							<th>Views</th>
+																							<th>Activity</th>
+																							<th>PLRS. FLOP</th>
+																						</tr>
+																					</thead>
+																					<tbody>
+																					</tbody>
+																				</table>
+																				<div class="text-center spinner" style="display:none;">
+																					<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+																				</div>
+																			</div>
+																		</div>
+
+																	</div>
+																	{% endfor %}
+																</div>
+															</div>
+														</div>
+													</div>
+											</div>
+                	</div>
+									<div class="over_threads">
+									</div>
+	                <div class="social-card">
+
+                    <!-- Card header -->
+                    <div class="social-header rgba-stylish-strong z-depth-1" role="tab" id="heading3">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx7" href="#collapse3"
+                        aria-expanded="false" aria-controls="collapse3">
+                            <h5 class="mb-0 white-text  font-thin text-center">
+                            Tutorials  <i class="fas fa-angle-down rotate-icon pull-right"></i>
+                            </h5>
+                        </a>
+                    </div>
+
+                    <!-- Card body -->
+                    <div id="collapse3" class="collapse" role="tabpanel" aria-labelledby="heading3" data-parent="#accordionEx7">
+                        <div class="social-body mb-1 rgba-grey-light white-text">
+                        </div>
+                    </div>
+                	</div>
+                	<div class="social-card">
+	                    <div class="social-header rgba-stylish-strong z-depth-1" role="tab" id="heading4">
+	                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx7" href="#collapse4"
+	                        aria-expanded="false" aria-controls="collapse4">
+	                            <h5 class="mb-0 white-text  font-thin text-center">
+	                            Gameplay <i class="fas fa-angle-down rotate-icon pull-right"></i>
+	                            </h5>
+	                        </a>
+	                    </div>
+
+	                    <!-- Card body -->
+	                    <div id="collapse4" class="collapse" role="tabpanel" aria-labelledby="heading4" data-parent="#accordionEx7">
+	                        <div class="social-body mb-1 rgba-grey-light white-text">
+	                        </div>
+	                    </div>
+                	</div>
+
+
+	                <div class="social-card">
+
+	                    <!-- Card header -->
+	                    <div class="social-header rgba-stylish-strong z-depth-1" role="tab" id="heading5">
+	                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx7" href="#collapse5"
+	                        aria-expanded="false" aria-controls="collapse4">
+	                            <h5 class="mb-0 white-text font-thin text-center">
+	                            Game Support <i class="fas fa-angle-down rotate-icon pull-right"></i>
+	                            </h5>
+	                        </a>
+	                    </div>
+
+	                    <!-- Card body -->
+	                    <div id="collapse5" class="collapse" role="tabpanel" aria-labelledby="heading5" data-parent="#accordionEx7">
+	                        <div class="social-body mb-1 rgba-grey-light white-text">
+	                        </div>
+	                    </div>
+	                </div>
+
+            	</div> <!--/.Accordion wrapper-->
+        </div>
+        <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+</section>
+{% endblock %}

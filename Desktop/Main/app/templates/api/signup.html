@@ -1,0 +1,211 @@
+<!doctype html>
+<html class="fixed">
+	<head>
+		<!-- Basic -->
+		<meta charset="UTF-8">
+
+		<meta name="keywords" content="HTML5 Admin Template" />
+		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
+		<meta name="author" content="okler.net">
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<!-- Web Fonts  -->
+		<link href="https://fonts.googleapis.com/css?family=OpenSans:300,400,600,700,800|ShadowsIntoLight" rel="stylesheet" type="text/css">
+
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='vendor/animate/animate.css') }}" />
+
+		<link rel="stylesheet" href="{{ url_for('static', filename='vendor/font-awesome/css/fontawesome-all.min.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='vendor/magnific-popup/magnific-popup.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css') }}" />
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css') }}" />
+
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/skins/default.css') }}" />
+
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}" />
+
+		<!-- Head Libs -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='vendor/modernizr/modernizr.js') }}" />
+
+	</head>
+	<body>
+		<!-- start: page -->
+		<section class="body-sign">
+			<div class="center-sign">
+				<a href="/" class="logo float-left">
+					<img src="static/img/logo.png" width="115" height="54" alt="ELORAUS Admin" />
+				</a>
+
+				<div class="panel card-sign">
+					<div class="card-title-sign mt-3 text-right">
+						<h2 class="title text-uppercase font-weight-bold m-0"><i class="fas fa-user mr-1"></i> Sign Up</h2>
+					</div>
+					<!-- Horizontal form -->
+					<div class="card-body">
+						 {% with messages = get_flashed_messages() %}
+							 {% if messages %}
+								<ul>
+								   {% for message in messages %}
+								   <li>{{ message }}</li>
+								   {% endfor %}
+								</ul>
+							 {% endif %}
+						  {% endwith %}
+						<form action="" method="post">
+							{{ form.hidden_tag() }}
+							<div class="form-group mb-3">
+								<div class="row">
+									<div class="col-sm-6 mb-3">
+										{{ form.firstname.label }}
+										{{ form.firstname(class="form-control",placeholder="",size=32) }}
+										{% for error in form.firstname.errors %}
+											<span style="color: red;">[{{ error }}]</span>
+										{% endfor %}
+									</div>
+									<div class="col-sm-6 mb-3">
+										{{ form.lastname.label }}
+										{{ form.lastname(class="form-control",placeholder="",size=32) }}
+										{% for error in form.lastname.errors %}
+											<span style="color: red;">[{{ error }}]</span>
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group mb-3">
+								{{ form.email.label }}
+								{{ form.email(class="form-control",placeholder="",size=32) }}
+								{% for error in form.email.errors %}
+									<span style="color: red;">[{{ error }}]</span>
+								{% endfor %}
+							</div>
+							<div class="form-group mb-3">
+								{{ form.username.label }}
+								{{ form.username(class="form-control",placeholder="",size=32) }}
+								{% for error in form.username.errors %}
+									<span style="color: red;">[{{ error }}]</span>
+								{% endfor %}
+							</div>
+
+							<div class="form-group mb-0">
+								<div class="row">
+									<div class="col-sm-6 mb-3">
+										{{ form.pw.label }}
+										{{ form.pw(class="form-control",placeholder="",size=32) }}
+										{% for error in form.pw.errors %}
+											<span style="color: red;">[{{ error }}]</span>
+										{% endfor %}
+									</div>
+									<div class="col-sm-6 mb-3">
+										{{ form.pw2.label }}
+										{{ form.pw2(class="form-control",placeholder="",size=32) }}
+										{% for error in form.pw2.errors %}
+											<span style="color: red;">[{{ error }}]</span>
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group mb-3">
+								<div class="row">
+									<div class="col-sm-6 mb-3">
+										{{ form.state.label }}
+										{{ form.state(class="form-control form-control-sm mb-3",placeholder="") }}
+										{% for error in form.state.errors %}
+											<span style="color: red;">[{{ error }}]</span>
+										{% endfor %}
+									</div>
+									<div class="col-sm-6 mb-3">
+										{{ form.zip.label }}
+										{{ form.zip(class="form-control mb-3",placeholder="",size=32) }}
+										{% for error in form.zip.errors %}
+											<span style="color: red;">[{{ error }}]</span>
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+							<div class="form-group mb-3">
+								<div class="row">
+									<div class="col-sm-6 mb-3">
+										{{ form.city.label }}
+										{{ form.city(class="form-control",placeholder="",size=32) }}
+										{% for error in form.city.errors %}
+											<span style="color: red;">[{{ error }}]</span>
+										{% endfor %}
+									</div>
+									<div class="col-sm-6 mb-3">
+										{{ form.country.label }}
+										{{ form.country(class="form-control form-control-sm",placeholder="") }}
+										{% for error in form.country.errors %}
+											<span style="color: red;">[{{ error }}]</span>
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+							<div class="form-group mb-3">
+								<div class="row">
+									<div class="col-sm-6 mb-3">
+										{{ form.gender.label }}
+										{{ form.gender(class="form-control form-control-sm",placeholder="") }}
+										{% for error in form.gender.errors %}
+											<span style="color: red;">[{{ error }}]</span>
+										{% endfor %}
+									</div>
+									<div class="col-sm-6 mb-3">
+										{{ form.timezone.label }}
+										{{ form.timezone(class="form-control form-control-sm",placeholder="") }}
+										{% for error in form.timezone.errors %}
+											<span style="color: red;">[{{ error }}]</span>
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-sm-8">
+								</div>
+								<div class="col-sm-4 text-right">
+									{{ form.submit(class="btn btn-primary mt-2") }}
+								</div>
+							</div>
+
+							<p>Already registered? <a href="{{ url_for('api.login') }}">Click to Login!</a></p>
+
+						</form>
+					</div>
+				</div>
+
+				<p class="text-center text-muted mt-3 mb-3">&copy; Copyright 2019. All Rights Reserved.</p>
+			</div>
+		</section>
+		<!-- end: page -->
+
+		<!-- Vendor -->
+		<script src="{{ url_for('static', filename='vendor/jquery/jquery.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery-browser-mobile/jquery.browser.mobile.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/popper/umd/popper.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/common/common.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/nanoscroller/nanoscroller.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/magnific-popup/jquery.magnific-popup.js') }}"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery-placeholder/jquery-placeholder.js') }}"></script>
+
+		<!-- Theme Base, Components and Settings -->
+		<script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+
+		<!-- Theme Custom -->
+		<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+		<!-- Theme Initialization Files -->
+		<script src="{{ url_for('static', filename='js/theme.init.js') }}"></script>
+
+	</body>
+</html>

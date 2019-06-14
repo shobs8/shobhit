@@ -1,0 +1,49 @@
+<div class="info-page-body" style="width: -webkit-fill-available;
+padding: 15px;">
+<div class="col-md-12">
+    <div class="Description-box">
+        <h2>Tournament registration</h2>
+    </div>
+    <div class="Description-box">
+        <h2>Organizer's message</h2>
+        <blockquote>
+            Bienvenido a la Liga de Clash Royale
+        </blockquote>
+    </div>
+    <!-- horizotal form -->
+    <div class="Description-box">
+        <h2>Player information</h2>
+    </div>
+    <form action="" method="post" style="padding: 10px;">
+        {{ form.hidden_tag() }}
+        <div class="row">
+            <div class="form-group col-md-6">
+                {{ form.player_nickname.label }}<br>
+                {{ form.player_nickname() }}
+            </div>
+            <div class="form-group col-md-6">
+                {{ form.player_email.label }}<br>
+                {{ form.player_email(type='email',readonly='true') }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1" style="padding: 0; margin-right: 0px;max-width: 4%;">
+                {{ form.i_agree(style='float:right;margin-top: 6px;max-width:50%;') }}
+            </div>
+            <div class="col-md-4" style="padding: 0px;">
+                <label style="display:block;"> I agree</label>
+            </div>
+        </div>
+
+        <div class="form-group" style="text-align:center;">
+            {{ form.submit(class='btn btn-success', style='max-width:20%; padding:10px;font-weight:700; font-size:15px;') }}
+        </div>
+    </form>
+    <!-- /horizotal form -->
+</div>
+
+</div>
+<!--
+player_nickname
+player_email
+submit -->

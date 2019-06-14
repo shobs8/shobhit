@@ -1,0 +1,422 @@
+.topnav .search-container {
+    float: left;
+    position: absolute;
+    z-index: 1;
+	left:20px;
+	top: 6px;
+	border: 1px solid #eee;
+    border-radius: 30px;
+	overflow: hidden;
+}
+
+.topnav input[type=text] {
+  padding: 6px 15px;
+  margin-top: 0px;
+  font-size: 14px;
+  border: none;
+  background: #282d36;
+  color:#eee;
+}
+.collapse1-content-item img {
+    width: 100%;
+}
+.collapse1-content-item-img{
+	position:relative;
+}
+.collapse1-content-item-img a.rr-value1 {
+    position: absolute;
+    left: 10px;
+	bottom:5px;
+}
+.collapse1-content-item-img a.rr-value2 {
+    position: absolute;
+    right: 10px;
+	bottom:5px;
+}
+.collapse1-content-item-img a {
+    color: #eee;
+}
+.topnav .search-container button {
+	float: right;
+    padding: 6px 10px;
+    margin-top: 0px;
+    margin-right: 0px;
+    background: #282d36;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    color: #eee;
+}
+
+.topnav .search-container button:hover {
+  background: #282d36;
+}
+
+
+
+.card-body-custom {
+    padding: 0px 20px 10px 20px;
+}
+.collapse1-content-item-pop {
+    position: absolute;
+    z-index: 99999;
+    top: 0px;
+	height: 0;
+    overflow: hidden;
+    width: 100%;
+	left: 0px;
+	background: #1d2127;
+    padding: 0px 20px;
+    /* border: 1px solid #2f3139; */
+}
+.collapse1-content-category-pop {
+    position: absolute;
+    z-index: 9999;
+    top: 0px;
+	height: 100%;
+    width: 100%;
+	left: 0px;
+	background: #1d2127;
+    padding: 35px 20px;
+    /* border: 1px solid #2f3139; */
+}
+.collapse1-content-item h2 {
+	font-size: 1.1em;
+    font-weight: 300;
+    letter-spacing: normal;
+    text-align: center;
+    margin: 0px;
+}
+
+.collapse-custom .collapse-main {
+    padding: 20px 0;
+    border: 1px solid #2f3139;
+	margin-bottom: 50px;
+	position: relative;
+}
+.collapse1-content-item h6 {
+    font-size: 13px;
+}
+
+.collapse1-content-item-img:before {
+    background: #0000005e;
+    content: '';
+    width: 100%;
+    height: 100%;
+    float: none;
+    position: absolute;
+}
+
+div#heading1 a.btn.btn-default {
+    position: absolute;
+    z-index: 1;
+    right: 65px;
+    top: 6px;
+    padding: 6px 10px;
+    border: 1px solid #eee;
+    border-radius: 0px;
+    color: #eee;
+	box-shadow: 1px 1px 1px 1px #eee !important;
+}
+
+/* The Modal (background) */
+.modal {
+	display: none;
+    position: fixed;
+    z-index: 999999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    background: #0b0b0bb5;
+}
+
+/* Modal Content/Box */
+.modal-content {
+	background-color: #fefefe;
+	padding: 0px;
+    max-width: 600px;
+    margin: auto !important;
+    height: fit-content;
+    position: absolute;
+    float: none !important;
+    top: 0px;
+    bottom: 0px;
+    display: inline-block !important;
+    left: 0px;
+    right: 0px;
+}
+span.close-pop {
+	color: #eee;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    z-index: 999;
+    opacity: 1;
+	top: 5px;
+    cursor: pointer;
+}
+.collapse-main-Boards table th {
+    border-top: 0px !important;
+}
+.collapse-main-Boards table tbody tr:hover{
+	color: #fff !important;
+}
+.collapse-main-Boards table tbody tr{
+	cursor: pointer;
+}
+span.close-pop-category {
+	color: #eee;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    z-index: 999;
+    opacity: 1;
+	top: 5px;
+    cursor: pointer;
+}
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.close {
+	color: #eee;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    z-index: 999;
+    opacity: 1;
+}
+.accordion .modal-content .card-header {
+    padding: 18px;
+    border-radius: 3px !important;
+    border-bottom: 0;
+}
+.grid-item-popup-content{
+	padding:20px;
+}
+.grid-item-popup-content textarea.form-control {
+    height: inherit;
+}
+
+.form-row input, .form-row textarea {
+    margin-bottom: 15px;
+}
+
+.collapse1-content-item {
+    cursor: pointer;
+}
+
+
+.collapse1-content-item-pop img {
+    width: 100%;
+}
+.collapse1-content-category-pop img {
+    width: 100%;
+}
+.card-body-custom .col-lg-3.col-xxxs {
+    position: unset;
+}
+.collapse1-content-item-right-top span{
+	float:left;
+}
+.collapse1-content-item-right-top i{
+	float:right;
+	font-size:20px;
+	line-height: 28px;
+}
+.collapse1-content-item-right {
+    color: #eee;
+}
+.collapse1-content-item-right {
+    color: #eee;
+    border: 1px solid #2f3139;
+    padding: 15px;
+}
+
+.collapse1-content-item-right-row:last-child{
+	margin-bottom:0px !important;
+}
+.collapse1-content-item-right-row {
+    border: 1px solid #2f3139;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.card-body-custom .row {
+    position: unset;
+}
+.collapse-main a, .collapse-main span, .collapse-main .h5, .collapse-main .h2, .collapse-main .h6 {
+    color: #eee !important;
+}
+.collapse-main-Boards h5 {
+    padding: 40px 0 !important;
+    cursor: pointer;
+    border: 1px solid #2f3139;
+}
+.collapse-main-Boards{}
+
+.collapse-main-Boards.collapse-main {
+    position: relative;
+}
+.collapse-main h2 {
+    margin-bottom: 20px !important;
+}
+
+div#accordionEx7-custom.accordion .card-header h5 i {
+    border: 1px solid #fff;
+    padding: 6px 10px;
+    height: 35px;
+    top: -14px;
+    line-height: 24px;
+}
+
+
+@media screen and (max-width:1280px){
+	.collapse1-content-item-right-row {
+		padding: 10px;
+		margin-bottom: 10px;
+		font-size: 13px;
+	}
+	.collapse1-content-item-right {
+		padding: 10px;
+	}
+}
+@media screen and (max-width:1200px){
+	.collapse1-content-item-right-row {
+		padding: 10px;
+		margin-bottom: 10px;
+		font-size: 12px;
+		line-height: 14px;
+	}
+}
+@media screen and (max-width:991px){
+	.collapse1-content-item-right-row {
+		padding: 10px;
+		margin-bottom: 10px;
+		font-size: 12px;
+	}
+	.Community-top a.Community-top-a {
+		margin-top: 40px;
+	}
+	.card-header i{
+		margin-right:0px;
+	}
+	div#heading1 a.btn.btn-default {
+		right: 20px;
+	}
+}
+@media screen and (max-width:767px){
+	.row.accordion-gradient-bcg.d-flex.justify-content-center {
+		width: 100%;
+		margin: 0px;
+	}
+}
+@media screen and (max-width:600px){
+	.table th, .table td {
+		padding: 5px;
+		vertical-align: top;
+		font-size: 12px;
+		letter-spacing: 0px;
+		border-top: 1px solid #dee2e6;
+	}
+	.topnav .search-container {
+		position: relative;
+		z-index: 1;
+		left: 0px;
+		top: 0px;
+		border: 1px solid #eee;
+		border-radius: 2px;
+		width: 100%;
+	}
+	.Community-top a.Community-top-a {
+		margin-top: 0px;
+	}
+	.card-body-custom {
+		padding: 0px 10px 10px 10px;
+	}
+	
+	div#heading1 a.btn.btn-default {
+		right: inherit;
+		left: 10px;
+	}
+	.search-container {
+		display: none;
+	}
+}
+@media screen and (max-width:410px){
+	div#heading1 a.btn.btn-default {
+		right: inherit;
+		left: 0px;
+		position: relative;
+		width: 100% !important;
+		display: inline-block;
+	}
+}
+
+
+
+
+.over_threads {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #1d212796;
+    z-index: 9999;
+    content: '';
+    left: 0px;
+    top: 0px;
+	display:none;
+}
+.collapse1-content-item-pop > div {
+    padding: 35px 0 !important;
+}
+.box-hover-clear{
+	opacity:0;visibility: hidden;    transition: 0.4s;
+}
+.collapse1-content-item-right-row:hover .box-hover-clear{
+	opacity:1;visibility: visible;
+}
+.collapse1-content-item-right-row {
+	position:relative;   
+}
+.box-hover-clear {
+    background: #191c21;
+    position: absolute;
+    padding: 10px;
+    left: -45px;
+    z-index: 9999;
+    width: 250px;
+    border: 1px solid #2f3139;
+    top: 30px;
+}
+
+.close-popup {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    cursor: pointer;opacity:0;   
+	font-family: "Open Sans", Arial, sans-serif;font-weight: bold;font-size:14px;
+}
+.collapse1-content-item-right-row:hover .close-popup{
+	opacity:1; transition: height .25s,margin-top .25s,opacity .25s;
+
+}

@@ -1,0 +1,153 @@
+.cover {
+    text-align: center;
+    position: relative;
+}
+.cover .description {
+    text-align: left;
+    background-color: #9d92b0;
+    color: #f8f9fa;
+    padding: 20px;
+}
+.cover .btn-holder {
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 0px 10px 0px;
+}
+.sort .dropdown-holder {
+    float: right;
+    padding: 50px;
+}
+
+.cover .btn-holder .col{
+    padding: 10px 0px 10px 0px;
+    margin: 0px 10px 0px 10px;
+}
+
+.gicons-parent {
+position: absolute;
+bottom: 0;
+right: 20px;
+}
+
+.gicons {
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    font-size: 22px;
+    color: white;
+}
+
+.sponsorship-profile .user-img {
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.infinite-container .img{
+
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+    width: 150px;
+}
+.infinite-container .name{
+    text-align: left;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+    max-width: 100px;
+    color: #f8f9fa;
+}
+.infinite-container .not-name{
+    float:right;
+    display: inline-block;
+    margin-right: 30px;
+    vertical-align: middle;
+    max-width: 100px;
+    color: #f8f9fa;
+}
+
+.not-name {
+    color:white;
+}
+
+.stat {
+    margin-top: 20px;
+    text-align: center;
+    padding: 50px 25px 50px 25px;
+    vertical-align: middle;
+    background-color: #9d92b0;
+    color: #f8f9fa;
+    font-size: x-large;
+}
+.sponsorship-profile .text {
+    text-align: left;
+    color: #f8f9fa;
+    background-color: #9d92b0;
+    padding: 10px 10px 10px 10px;
+}
+.sponsorship-profile .user-name {
+    display: inline-block;
+    color: white;
+}
+.sponsorship-profile .user-img img {
+    max-width: 150px;
+}
+.container-box {
+    padding: 65px;
+    margin: 0px 23px 23px 23px;
+    background-color: #756790;
+}
+
+.input-group .custom-dropdown{
+    background-color: #f8f9fa;
+    color: black;
+    border-color: #f8f9fa;
+}
+
+
+.modal .modal-sponsor {
+    padding-top: 800px;
+    max-width: 800px;
+}
+
+.pagination-page-info {
+    margin: .5em;
+    margin-left: 0;
+    background: #9d92b0;
+    color: #f8f9fa;
+    width: 100%;
+    justify-content: center;
+}
+.pagination-page-info h3 {
+    text-align: center;
+    font-size: 15px;
+    margin: 5px;
+}
+.pagination-page-info {
+    height: 30px;
+}
+.left-head{
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.right-head{
+    margin-right: 5px;
+    vertical-align: middle;
+    text-align: right;
+}
+.card-title {
+    color:#f8f9fa;
+}
+.dataTables_filter{
+    display: none;
+}
+.dataTables_length{
+    display: none;
+}
+.dataTables_info{
+    display: none;
+}
+.dataTables_paginate{
+    display: none;
+}

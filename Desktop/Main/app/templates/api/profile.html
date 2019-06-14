@@ -1,0 +1,904 @@
+{% extends 'api/base.html' %}
+
+{% block body %}
+
+<section role="main" class="content-body">
+		<!-- start: page -->
+		<div class="row" style="background-color:rgba(66, 66, 84, 0.7)">
+				<div class="col-lg-4"></div>
+				<div class="col-lg-3"></div>
+				<div class="col-lg-5">
+						<div class="profile-nav" style="margin-top:15px;">
+							<button class="btn btn-secondary  btn-primary" id="nav-profile">Profile</button>
+							<button class="btn btn-secondary " id="nav-messaging">Messaging</button>
+							<button class="btn btn-secondary " id="nav-settings">Settings</button>
+							<button class="btn btn-secondary " id="nav-transactions">Transactions</button>
+							<button class="btn btn-secondary" id ="nav-sponsorship">Sponsorship</button>
+						</div>
+				</div>
+		</div>
+		<div class="row" style="background-color:rgba(66, 66, 84, 0.7)">
+				<div class="profile-cards" style="margin: 0px 30px 0px 30px">
+						<section class="profile-card" id="profile-profile">
+								<hr />
+								<div class="profile-body">
+									<div class="dashboard-right pull-right">
+											<div id="account-view">
+													<div class="row">
+															<div class="col-sm-12">
+																	<div class="dashboard-content-block" style="padding-left: 15px; padding-right:15px;">
+																			<div class="row">
+																					<div class="col-md-2" style="margin-top:10px; text-align:center;">
+																						<div class="user-block">
+																							<form action="{{ url_for('api.profile') }}" method="POST" enctype="multipart/form-data" class="picture-form">
+																								<input type="file" name="picture" class="picture-file">
+																							</form>
+																							<img class="user-picture user-img" src="{{avatar}}">
+																						</div>
+																						<h4>{{form.username.data}}</h4>
+																						<span style="text-align:left;margin-top:10px;">
+																							<h5>follows: </h5>
+																							<h5>unfollows: </h5>
+																						</span>
+
+																					</div>
+																					<div class="col-md-10">
+																						<form id="personal-details-form" class="form-block" action="" method="post" enctype="multipart/form-data">
+																							{{ form.hidden_tag() }}
+																							<div class="row">
+																								<div class="col-md-6">
+																									<div class="form-group">
+																										{{ form.firstname.label(class="form-label") }}
+																										{{ form.firstname(class="form-control") }}
+																										{% for error in form.firstname.errors %}
+																										<span style="color: red;">[{{ error }}]</span>
+																										{% endfor %}
+																									</div>
+																								</div>
+																								<div class="col-md-6">
+																									<div class="form-group">
+																										{{ form.lastname.label(class="form-label") }}
+																										{{ form.lastname(class="form-control") }}
+																										{% for error in form.lastname.errors %}
+																										<span style="color: red;">[{{ error }}]</span>
+																										{% endfor %}
+																									</div>
+																								</div>
+																								<div class="col-md-6">
+																									<div class="form-group">
+																										{{ form.email.label(class="form-label") }}
+																										{{ form.email(class="form-control") }}
+																										{% for error in form.email.errors %}
+																										<span style="color: red;">[{{ error }}]</span>
+																										{% endfor %}
+																									</div>
+																								</div>
+																								<div class="col-md-6">
+																									<div class="form-group">
+																										{{ form.username.label(class="form-label") }}
+																										{{ form.username(class="form-control") }}
+																										{% for error in form.username.errors %}
+																										<span style="color: red;">[{{ error }}]</span>
+																										{% endfor %}
+																									</div>
+																								</div>
+																								<div class="col-md-6">
+																									<div class="form-group">
+																										{{ form.state.label(class="form-label") }}
+																										{{ form.state(class="form-control form-select") }}
+																										{% for error in form.state.errors %}
+																										<span style="color: red;">[{{ error }}]</span>
+																										{% endfor %}
+																									</div>
+																								</div>
+																								<div class="col-md-6">
+																									<div class="form-group">
+																										{{ form.zip.label(class="form-label") }}
+																										{{ form.zip(class="form-control") }}
+																										{% for error in form.zip.errors %}
+																										<span style="color: red;">[{{ error }}]</span>
+																										{% endfor %}
+																									</div>
+																								</div>
+																								<div class="col-md-6">
+																									<div class="form-group">
+																										{{ form.city.label(class="form-label") }}
+																										{{ form.city(class="form-control") }}
+																										{% for error in form.city.errors %}
+																										<span style="color: red;">[{{ error }}]</span>
+																										{% endfor %}
+																									</div>
+																								</div>
+																								<div class="col-md-6">
+																									<div class="form-group">
+																										{{ form.country.label(class="form-label") }}
+																										{{ form.country(class="form-control form-select") }}
+																										{% for error in form.country.errors %}
+																										<span style="color: red;">[{{ error }}]</span>
+																										{% endfor %}
+																									</div>
+																								</div>
+																								<div class="col-md-6">
+																									<div class="form-group">
+																										{{ form.gender.label(class="form-label") }}
+																										{{ form.gender(class="form-control form-select") }}
+																										{% for error in form.gender.errors %}
+																										<span style="color: red;">[{{ error }}]</span>
+																										{% endfor %}
+																									</div>
+																								</div>
+																								<div class="col-md-6">
+																									<div class="form-group">
+																										{{ form.timezone.label(class="form-label") }}
+																										{{ form.timezone(class="form-control form-select") }}
+																										{% for error in form.timezone.errors %}
+																										<span style="color: red;">[{{ error }}]</span>
+																										{% endfor %}
+																									</div>
+																								</div>
+																							</div>
+																							{{ form.submit(class="btn btn-primary mt-3") }}
+																							<p class="form-notification personal-details-notification"></p>
+																						</form>
+
+																					</div>
+																			</div> <!-- end row -->
+																			<hr />
+																			<div class="row">
+																					<div class="col-md-12">
+																							<h3>Threads Following</h3>
+																					</div>
+																			</div> <!-- end row -->
+																			<hr />
+																			<div class="row">
+										  										<div class="col-md-12" style="margin-top:10px; text-align:center;">
+										                          <ul id="mailbox-visual" style="list-style-type: none;">
+										                              <li class="mailbody-box head-box my-3x">
+										                                  <div class="row">
+										                                      <div class="col-md-2 column-1 column-text text-center justify-content-center">
+										                                          <p class="m-0 text-white text-uppercase"><strong>Console</strong></p>
+										                                      </div>
+										                                      <div class="col-md-2 column-2 column-text">
+										                                          <p class="m-0 text-white text-uppercase text-center">
+										                                              <strong>Game</strong></p>
+										                                      </div>
+										                                      <div class="col-md-1 column-3 column-text">
+										                                          <p class="m-0 text-white text-uppercase text-center">
+										                                              <strong>Input</strong></p>
+										                                      </div>
+										                                      <div class="col-md-1 p-0 column-4 column-text">
+										                                          <p class="m-0 text-white text-uppercase text-center">
+										                                              <strong>Wager</strong></p>
+										                                      </div>
+																													<div class="col-md-1 p-0 column-5 column-text">
+																														 <p class="m-0 text-white text-uppercase text-center">
+																																 <strong>Rules</strong></p>
+																												 </div>
+										                                      <div class="col-md-1 p-0 column-7 column-text">
+										                                          <p class="m-0 text-white text-uppercase text-center"><strong>Game Type</strong>
+										                                          </p>
+										                                      </div>
+										                                      <div class="col-md-2 p-0 column-8 column-text">
+										                                      </div>
+										                                      <div class="col-md-2 p-0 column-9 column-text">
+										                                        <p class="m-0 text-white text-uppercase text-center">
+										                                            <strong>Winner</strong></p>
+										                                      </div>
+										                                  </div>
+										                              </li>
+										                          </ul>
+										                          <ul id="mailbox-visual" class="list-unstyled scrollable tab-content-inner">
+										                              {% for match in mymatches %}
+										                              <li class="mailbody-box">
+										                                  <a href="javascript:updateMatchInfo('{{ match['id'] }}')">
+										                                      <div class="row">
+										                                          <div class="col-md-2 column-1 column-text">
+										                                              <!-- <div class="checkbox-custom checkbox-text-primary ib">
+										                                                <input type="checkbox" id="mail1">
+										                                                <label for="mail1"></label>
+										                                              </div> -->
+										                                              <input class="star" type="checkbox" title="bookmark page"/>
+
+										                                              <input type="checkbox" name="cbG02" id="cbG02"
+										                                                     class="lock-unlock"/>
+										                                              <label for="cbG02" class="lock-label cb0"></label>
+
+										                                              <span class="protected-user"></span>
+
+										                                              <p class="m-0 ib mail-content text-white">{{ match['console'] }}</p>
+										                                          </div>
+										                                          <div class="col-md-2 column-2 column-text">
+										                                              <p class="m-0 text-white">{{ match['game'] }}</p>
+										                                          </div>
+										                                          <div class="col-md-1 column-3 column-text justify-content-center p-0">
+										                                              <p class="m-0 text-white">{{ match['input'] }}</p>
+										                                          </div>
+										                                          <div class="col-md-1 column-4 column-text justify-content-center">
+										                                              <p class="m-0 text-white">{{ match['wagers'] }}</p>
+										                                          </div>
+										                                          <div class="col-md-1 column-5 column-text justify-content-center">
+										                                              <p class="m-0 text-white">{{ match['rules'] }}</p>
+										                                          </div>
+										                                          <div class="col-md-1 column-6 column-text justify-content-center">
+										                                              <p class="m-0 text-white">{{ match['type'] }}</p>
+										                                          </div>
+										                                          <div class="col-md-2 column-7 column-text">
+										                                              <div class="progress">
+										                                                  <div class="progress-bar bg-success"
+										                                                       style="width:70%"></div>
+										                                              </div>
+										                                          </div>
+										                                          <div class="col-md-2 p-0 column-8 column-text justify-content-center">
+										                                              <p class="m-0 text-white">{{ match['winner'] }}</p>
+										                                          </div>
+										                                      </div>
+										                                  </a>
+										                              </li>
+										                              {% endfor %}
+										                          </ul>
+										  										</div>
+																			</div> <!-- end row -->
+
+																	</div> <!-- end dashboard-content -->
+															</div>
+													</div> <!-- end row -->
+											</div>
+									</div>
+								</div> <!-- end profile-body -->
+						</section>
+						<section class="profile-card hide" id="profile-messaging">
+								<div class="col-lg-2"></div>
+								<div class="col-lg-8">
+												<div class="profile-avatar">
+												</div>
+								</div>
+								<div class="col-lg-2"></div>
+						</section>
+						<section class="profile-card hide" id="profile-settings">
+								<h2>Settings</h2>
+								<hr />
+								<div class="profile-body">
+									<div class="dashboard-right pull-right">
+											<div id="account-view">
+													<div class="row">
+															<div class="col-sm-12">
+																	<div class="dashboard-content-block" style="padding-left: 15px; padding-right:15px;">
+																			<div class="row">
+																					<div class="col-md-2" style="margin-top:10px; text-align:center;">
+																						<div class="user-block">
+																							<form action="{{ url_for('api.profile') }}" method="POST" enctype="multipart/form-data" class="picture-form">
+																								<input type="file" name="picture" class="picture-file">
+																							</form>
+																							<img class="user-picture user-img" src="{{avatar}}">
+																						</div>
+																						<h4>{{form.username.data}}</h4>
+																						<span style="text-align:left;margin-top:10px;">
+																							<h5>follows: </h5>
+																							<h5>unfollows: </h5>
+																						</span>
+
+																					</div>
+																					<div class="col-md-10">
+																						<form id="personal-details-form" class="form-block" action="" method="post" enctype="multipart/form-data">
+																							{{ form.hidden_tag() }}
+																							<div class="row">
+																								<div class="col-md-6">
+																									<div class="form-group">
+																										{{ form.firstname.label(class="form-label") }}
+																										{{ form.firstname(class="form-control") }}
+																										{% for error in form.firstname.errors %}
+																										<span style="color: red;">[{{ error }}]</span>
+																										{% endfor %}
+																									</div>
+																								</div>
+																								<div class="col-md-6">
+																									<div class="form-group">
+																										{{ form.lastname.label(class="form-label") }}
+																										{{ form.lastname(class="form-control") }}
+																										{% for error in form.lastname.errors %}
+																										<span style="color: red;">[{{ error }}]</span>
+																										{% endfor %}
+																									</div>
+																								</div>
+																								<div class="col-md-6">
+																									<div class="form-group">
+																										{{ form.email.label(class="form-label") }}
+																										{{ form.email(class="form-control") }}
+																										{% for error in form.email.errors %}
+																										<span style="color: red;">[{{ error }}]</span>
+																										{% endfor %}
+																									</div>
+																								</div>
+																								<div class="col-md-6">
+																									<div class="form-group">
+																										{{ form.username.label(class="form-label") }}
+																										{{ form.username(class="form-control") }}
+																										{% for error in form.username.errors %}
+																										<span style="color: red;">[{{ error }}]</span>
+																										{% endfor %}
+																									</div>
+																								</div>
+																								<div class="col-md-6">
+																									<div class="form-group">
+																										{{ form.state.label(class="form-label") }}
+																										{{ form.state(class="form-control form-select") }}
+																										{% for error in form.state.errors %}
+																										<span style="color: red;">[{{ error }}]</span>
+																										{% endfor %}
+																									</div>
+																								</div>
+																								<div class="col-md-6">
+																									<div class="form-group">
+																										{{ form.zip.label(class="form-label") }}
+																										{{ form.zip(class="form-control") }}
+																										{% for error in form.zip.errors %}
+																										<span style="color: red;">[{{ error }}]</span>
+																										{% endfor %}
+																									</div>
+																								</div>
+																								<div class="col-md-6">
+																									<div class="form-group">
+																										{{ form.city.label(class="form-label") }}
+																										{{ form.city(class="form-control") }}
+																										{% for error in form.city.errors %}
+																										<span style="color: red;">[{{ error }}]</span>
+																										{% endfor %}
+																									</div>
+																								</div>
+																								<div class="col-md-6">
+																									<div class="form-group">
+																										{{ form.country.label(class="form-label") }}
+																										{{ form.country(class="form-control form-select") }}
+																										{% for error in form.country.errors %}
+																										<span style="color: red;">[{{ error }}]</span>
+																										{% endfor %}
+																									</div>
+																								</div>
+																								<div class="col-md-6">
+																									<div class="form-group">
+																										{{ form.gender.label(class="form-label") }}
+																										{{ form.gender(class="form-control form-select") }}
+																										{% for error in form.gender.errors %}
+																										<span style="color: red;">[{{ error }}]</span>
+																										{% endfor %}
+																									</div>
+																								</div>
+																								<div class="col-md-6">
+																									<div class="form-group">
+																										{{ form.timezone.label(class="form-label") }}
+																										{{ form.timezone(class="form-control form-select") }}
+																										{% for error in form.timezone.errors %}
+																										<span style="color: red;">[{{ error }}]</span>
+																										{% endfor %}
+																									</div>
+																								</div>
+																							</div>
+																							{{ form.submit(class="btn btn-primary mt-3") }}
+																							<p class="form-notification personal-details-notification"></p>
+																						</form>
+
+																					</div>
+																			</div> <!-- end row -->
+																			<hr />
+																			<div class="row">
+																					<div class="col-md-12">
+																							<h3>Threads Following</h3>
+																					</div>
+																			</div> <!-- end row -->
+																			<hr />
+																			<div class="row">
+																					<div class="col-md-12" style="margin-top:10px; text-align:center;">
+																							<ul id="mailbox-visual" style="list-style-type: none;">
+																									<li class="mailbody-box head-box my-3x">
+																											<div class="row">
+																													<div class="col-md-2 column-1 column-text text-center justify-content-center">
+																															<p class="m-0 text-white text-uppercase"><strong>Console</strong></p>
+																													</div>
+																													<div class="col-md-2 column-2 column-text">
+																															<p class="m-0 text-white text-uppercase text-center">
+																																	<strong>Game</strong></p>
+																													</div>
+																													<div class="col-md-1 column-3 column-text">
+																															<p class="m-0 text-white text-uppercase text-center">
+																																	<strong>Input</strong></p>
+																													</div>
+																													<div class="col-md-1 p-0 column-4 column-text">
+																															<p class="m-0 text-white text-uppercase text-center">
+																																	<strong>Wager</strong></p>
+																													</div>
+																													<div class="col-md-1 p-0 column-5 column-text">
+																														 <p class="m-0 text-white text-uppercase text-center">
+																																 <strong>Rules</strong></p>
+																												 </div>
+																													<div class="col-md-1 p-0 column-7 column-text">
+																															<p class="m-0 text-white text-uppercase text-center"><strong>Game Type</strong>
+																															</p>
+																													</div>
+																													<div class="col-md-2 p-0 column-8 column-text">
+																													</div>
+																													<div class="col-md-2 p-0 column-9 column-text">
+																														<p class="m-0 text-white text-uppercase text-center">
+																																<strong>Winner</strong></p>
+																													</div>
+																											</div>
+																									</li>
+																							</ul>
+																							<ul id="mailbox-visual" class="list-unstyled scrollable tab-content-inner">
+																									{% for match in mymatches %}
+																									<li class="mailbody-box">
+																											<a href="javascript:updateMatchInfo('{{ match['id'] }}')">
+																													<div class="row">
+																															<div class="col-md-2 column-1 column-text">
+																																	<!-- <div class="checkbox-custom checkbox-text-primary ib">
+																																		<input type="checkbox" id="mail1">
+																																		<label for="mail1"></label>
+																																	</div> -->
+																																	<input class="star" type="checkbox" title="bookmark page"/>
+
+																																	<input type="checkbox" name="cbG02" id="cbG02"
+																																				 class="lock-unlock"/>
+																																	<label for="cbG02" class="lock-label cb0"></label>
+
+																																	<span class="protected-user"></span>
+
+																																	<p class="m-0 ib mail-content text-white">{{ match['console'] }}</p>
+																															</div>
+																															<div class="col-md-2 column-2 column-text">
+																																	<p class="m-0 text-white">{{ match['game'] }}</p>
+																															</div>
+																															<div class="col-md-1 column-3 column-text justify-content-center p-0">
+																																	<p class="m-0 text-white">{{ match['input'] }}</p>
+																															</div>
+																															<div class="col-md-1 column-4 column-text justify-content-center">
+																																	<p class="m-0 text-white">{{ match['wagers'] }}</p>
+																															</div>
+																															<div class="col-md-1 column-5 column-text justify-content-center">
+																																	<p class="m-0 text-white">{{ match['rules'] }}</p>
+																															</div>
+																															<div class="col-md-1 column-6 column-text justify-content-center">
+																																	<p class="m-0 text-white">{{ match['type'] }}</p>
+																															</div>
+																															<div class="col-md-2 column-7 column-text">
+																																	<div class="progress">
+																																			<div class="progress-bar bg-success"
+																																					 style="width:70%"></div>
+																																	</div>
+																															</div>
+																															<div class="col-md-2 p-0 column-8 column-text justify-content-center">
+																																	<p class="m-0 text-white">{{ match['winner'] }}</p>
+																															</div>
+																													</div>
+																											</a>
+																									</li>
+																									{% endfor %}
+																							</ul>
+																					</div>
+																			</div> <!-- end row -->
+
+																	</div> <!-- end dashboard-content -->
+															</div>
+													</div> <!-- end row -->
+											</div>
+									</div>
+								</div> <!-- end profile-body -->
+						</section>
+						<section class="profile-card hide" id="profile-transactions">
+								<h2> Transactions </h2>
+								<div class="col-lg-2"></div>
+								<div class="col-lg-8">
+												<div class="profile-avatar">
+												</div>
+								</div>
+								<div class="col-lg-2"></div>
+						</section>
+
+						<section class="profile-card hide" id="profile-sponsorship">
+								<div class="card-body">
+									<div class="container-box">
+										<div class="row d-flex align-items-start">
+											<!--Cover Photo-->
+											<div class="col-md-5 cover">
+
+												<div class="border border-dark">
+													<img src="{{ '/' + cover }}" alt="John" style="width:100%">
+													<div class="gicons-parent">
+														<a class="gicons" href="#"><i class="fab fa-dribbble"></i></a>
+														<a class="gicons" href="#"><i class="fab fa-twitter"></i></a>
+														<a class="gicons" href="#"><i class="fab fa-linkedin"></i></a>
+														<a class="gicons" href="#"><i class="fab fa-facebook"></i></a>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-1"></div>
+											<!--Profile photo-->
+											<div class="col-md-6 sponsorship-profile">
+												<div class="clearfix text-left">
+													<div class="user-img">
+														<img class="border border-dark" src="{{avatar}}" alt="John"
+															style="width:100%">
+													</div>
+													<div class="user-name"><h2>{{user.firstname}} {{user.lastname}}</h2></div>
+												</div>
+												<div class="text border border-dark">
+													<p>{{user.about_me}}</p>
+												</div>
+											</div>
+										</div>
+										<div class="row d-flex align-items-start">
+											<div class="col-md-5 cover">
+
+												<div class="border border-dark description">
+													<div class="row">
+														<div class="col-md-10"><h5>Teams: </h5></div>
+														<div class="col-md-2">{{user.matches|length}}</div>
+													</div>
+													<div class="row">
+														<div class="col-md-10"><h5>Games in a year: </h5></div>
+														<div class="col-md-2">{{matches|length}}</div>
+													</div>
+													<div class="row">
+														<div class="col-md-10"><h5>Prize Money in a year:</h5></div>
+														<div class="col-md-2">{{total_prize}} $</div>
+													</div>
+													<div class="row">
+														<div class="col-md-10"><h5>Prize Money overall: </h5></div>
+														<div class="col-md-2">{{total_prize}} $</div>
+													</div>
+
+
+												</div>
+											</div>
+											<div class="col-md-1"></div>
+											<div class="col-md-6 cover">
+												<div class="row btn-holder">
+													<button class="col btn btn-light" data-toggle="modal" data-target="#myModal">Sponsor
+													</button>
+													<button class="col btn btn-light" data-toggle="modal" data-target="#myModal">Donate
+													</button>
+												</div>
+
+											</div>
+										</div>
+										<div class="row d-flex align-items-start">
+											<div class="col-md-6">
+												<div class="row">
+													<div class="col-md-6 sponsorship-profile">
+														<div class="row clearfix text-left align-items-center">
+															<div class="col-md-6">
+																<h1 class="border border-dark stat">{{wins}}</h1>
+															</div>
+															<div class="col-md-6 user-name"><h3>Wins</h3></div>
+														</div>
+													</div>
+													<div class="col-md-6 sponsorship-profile">
+														<div class="row clearfix text-left align-items-center">
+															<div class="col-md-6">
+																<h1 class="border border-dark stat">{{losses}}</h1>
+															</div>
+															<div class="col-md-6 user-name"><h3>Losses</h3></div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<div class="col-md-6 sort">
+												<!--<div class="row dropdown-holder">-->
+													<!--<div class="btn btn-light sort-dropdown-header" data-toggle="dropdown">-->
+													<!--Sort-->
+													<!--</div>-->
+													<!--<div class="dropdown-menu">-->
+														<!--<ul class="list-unstyled mb-0">-->
+															<!--<li class="pb-1">-->
+																<!--<a style="color:#212529" id="console-sort" role="menuitem">By Console</a>-->
+															<!--</li>-->
+															<!--<li class="pb-1">-->
+																<!--<a style="color:#212529" id="game-sort" role="menuitem">By Game</a>-->
+															<!--</li>-->
+															<!--<li class="pb-1" >-->
+																<!--<a style="color:#212529" id="result-sort" role="menuitem">By Result</a>-->
+															<!--</li>-->
+															<!--<li class="pb-1">-->
+																<!--<a style="color:#212529" id="prize-sort" role="menuitem">By Prize Money</a>-->
+															<!--</li>-->
+														<!--</ul>-->
+													<!--</div>-->
+												<!--</div>-->
+
+											</div>
+										</div>
+										<br>
+										<br>
+										<div class="row d-flex align-items-start">
+											<div class="col-md-12">
+
+												<table id="matchesbody" class="infinite-container" style="width:100%">
+													<thead>
+													<div class="row d-flex pagination-page-info">
+														<h3 id="records_number"></h3>
+													</div>
+													<tr class="pagination-page-info">
+														<th class="left-head">Result</th>
+														<th class="left-head">Game</th>
+														<th class="right-head">Console</th>
+														<th class="right-head">Type</th>
+														<th class="right-head">League</th>
+													</tr>
+
+													</thead>
+													{% for match in matches %}
+													<tr class="infinite-item">
+														<td>
+															<div class="img">
+																<h1 class="border border-dark stat">{{ 'WIN' if match.winner==user.id else
+																	'LOSS'}}</h1>
+															</div>
+														</td>
+														<td>
+															<div class="name">
+																<h3>{{match.game}}</h3>
+															</div>
+														</td>
+														<td>
+															<div class="not-name">
+																<h4>{{match.console}}</h4>
+															</div>
+														</td>
+														<td>
+															{# <div class="not-name">
+																<h4>{{match['game_rules']['game_type']}}</h4>
+															</div> #}
+														</td>
+														<td>
+															<div class="not-name">
+																<h4>{{match.league}}</h4>
+															</div>
+														</td>
+													</tr>
+													{% endfor %}
+												</table>
+												<div class="d-flex justify-content-center">
+													<div class="spinner-border text-light" role="">
+														<span class="sr-only">Loading...</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!--Sponsorship Modal Starts Here-->
+										<div class="modal fade" id="myModal" role="dialog">
+											<div class="modal-dialog modal-sponsor">
+												<!-- Modal content-->
+												<div class="modal-content" style="background-color: #f8f9fa;">
+													<form method="post" action="">
+														<div class="modal-header">
+															<h4 class="modal-title">Your sponsorship makes a difference!</h4>
+															<button type="button" class="close" data-dismiss="modal">&times;</button>
+														</div>
+														<div class="modal-body">
+															{{ sponsor_form.csrf_token() }}
+															<div class="form-row">
+																<div class="form-group col-md-6 modal-main">
+																	<div class="modal-img">
+																		<img class="border border-dark" src="{{avatar}}"
+																			alt="John"
+																			style="width:100%">
+																	</div>
+																	<br>
+																	<div class="row modal-input">
+																		<div class="col-md-6">Amount</div>
+																		<div class="col-md-6">
+																			{{ sponsor_form.amount(class="form-control modal-input",
+																			placeholder="$") }}
+																			{% for error in sponsor_form.amount.errors %}
+																			<span style="color: red;">[{{ error }}]</span>
+																			{% endfor %}
+																		</div>
+																	</div>
+
+																	<br>
+																	<div class="row modal-input">
+																		<div class="col-md-6">Sponsor Anonymously</div>
+
+																		<div class="col-md-6">
+																			{{ sponsor_form.anonymous(class="form-control modal-checkbox",
+																			placeholder="")}}
+																		</div>
+																	</div>
+																	<br>
+																	<div class="row modal-input">
+																		<div class="col-md-6">Sponsor Every Month</div>
+																		<div class="col-md-6">
+																			{{ sponsor_form.every_month(class="form-control modal-checkbox",
+																			placeholder="")
+																			}}
+																		</div>
+																	</div>
+																	<br>
+																	<div class="row modal-input">
+																		<!--<div class="col-md-6">Optional Message</div>-->
+																		<div class="col-md-12">
+																			{{ sponsor_form.message(class="form-control", placeholder="Optional
+																			Message") }}
+																		</div>
+																	</div>
+
+
+																</div>
+																<div class="form-group col-md-6 mb-3 mb-lg-0">
+																	{{ sponsor_form.name(class="form-control", placeholder="Full Name") }}
+																	{% for error in sponsor_form.name.errors %}
+																	<span style="color: red;">[{{ error }}]</span>
+																	{% endfor %}
+																	<br>
+																	{{ sponsor_form.email(class="form-control", placeholder="Email Address") }}
+																	{% for error in sponsor_form.email.errors %}
+																	<span style="color: red;">[{{ error }}]</span>
+																	{% endfor %}
+																	<br>
+																	{{ sponsor_form.gender(class="form-control", placeholder="Your Gender") }}
+																	{% for error in sponsor_form.gender.errors %}
+																	<span style="color: red;">[{{ error }}]</span>
+																	{% endfor %}
+																	<br>
+																	{{ sponsor_form.card_number(class="form-control", placeholder="Credit Card
+																	Number") }}
+																	{% for error in sponsor_form.card_number.errors %}
+																	<span style="color: red;">[{{ error }}]</span>
+																	{% endfor %}
+																	<br>
+																	<div class="row">
+																		<div class="col-md-4">{{
+																			sponsor_form.card_expiry_month(class="form-control",
+																			placeholder="Month") }}
+																			{% for error in sponsor_form.card_expiry_month.errors %}
+																			<span style="color: red;">[{{ error }}]</span>
+																			{% endfor %}
+																		</div>
+																		<div class="col-md-4">{{ sponsor_form.card_expiry_year(class="form-control",
+																			placeholder="Year") }}
+																			{% for error in sponsor_form.card_expiry_year.errors %}
+																			<span style="color: red;">[{{ error }}]</span>
+																			{% endfor %}
+																		</div>
+																		<div class="col-md-4">{{ sponsor_form.card_cvv(class="form-control",
+																			placeholder="CVV")
+																			}}
+																			{% for error in sponsor_form.card_cvv.errors %}
+																			<span style="color: red;">[{{ error }}]</span>
+																			{% endfor %}
+																		</div>
+																	</div>
+																	<br>
+																	{{ sponsor_form.country(class="form-control", placeholder="") }}
+																	{% for error in sponsor_form.country.errors %}
+																	<span style="color: red;">[{{ error }}]</span>
+																	{% endfor %}
+																	<br>
+																	{{ sponsor_form.state(class="form-control", placeholder="") }}
+																	{% for error in sponsor_form.state.errors %}
+																	<span style="color: red;">[{{ error }}]</span>
+																	{% endfor %}
+																	<br>
+																	{{ sponsor_form.city(class="form-control", placeholder="City") }}
+																	{% for error in sponsor_form.city.errors %}
+																	<span style="color: red;">[{{ error }}]</span>
+																	{% endfor %}
+																	<br>
+																	{{ sponsor_form.zip(class="form-control", placeholder="Zip Code") }}
+																	{% for error in sponsor_form.zip.errors %}
+																	<span style="color: red;">[{{ error }}]</span>
+																	{% endfor %}
+																	<br>
+																	{{ sponsor_form.billing_address(class="form-control", placeholder="Billing
+																	Address") }}
+																	{% for error in sponsor_form.billing_address.errors %}
+																	<span style="color: red;">[{{ error }}]</span>
+																	{% endfor %}
+																</div>
+															</div>
+														</div>
+														<div class="modal-footer">
+															{{ sponsor_form.submit(class="btn btn-success mt-2") }}
+														</div>
+													</form>
+												</div>
+
+											</div>
+										</div>
+										<!--Sponsorship Modal Ends Here-->
+									</div>
+								</div>
+						</section>
+				</div> <!-- end profile-profile-cards -->
+		</div>
+
+</section>
+
+<script type="text/javascript">
+    var page_number;
+    var records_number;
+    $(document).ready(function(){
+        var match_table = $('#matchesbody').DataTable();
+        // Dropdown sorting
+        $('#console-sort').click(function () {match_table.column('0:visible').order('asc').draw();});
+        $('#game-sort').click(function () {match_table.column('1:visible').order('asc').draw();});
+        $('#result-sort').click(function () {match_table.column('2:visible').order('asc').draw();});
+        $('#prize-sort').click(function () {match_table.column('3:visible').order('asc').draw();});
+
+        page_number = {{ pagination.page }}
+        records_number = {{ pagination.per_page }}
+        getRecordsShown(records_number);
+        windowOnScroll(page_number);
+    });
+    function getRecordsShown(records_number){
+        document.getElementById('records_number').innerHTML = "Showing Results: " + records_number.toString();
+    }
+    function windowOnScroll(page_number) {
+        $(window).on("scroll", function(e){
+            if ($(window).scrollTop() == $(document).height() - $(window).height()){
+                if({{ pagination.total }} > page_number * {{pagination.per_page}}) {
+                    var lastId = $(".post-item:last").attr("id");
+                    getMoreData({{ pagination.page + 1 }});
+                }
+            }
+        });
+    }
+
+    function getMoreData(page_number) {
+        $(window).off("scroll");
+        $.ajax({
+            url: '/sponsorship-infinite/admin?page='+ page_number,
+            type: "get",
+            beforeSend: function ()
+            {
+                $('.loading').show();
+                console.log("requests sent")
+            },
+            success: function (data) {
+                setTimeout(function() {
+                    console.log('response received')
+                    $('.loading').hide();
+                    data['matches'].forEach(function(match){
+                        $("#matchesbody").append(
+                            `
+                            <tr class="infinite-item">
+                        <td>
+                            <div class="img">
+                                <h1 class="border border-dark stat">${match.winner ==='admin' ? "WIN" : "LOSS"}</h1>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="name">
+                                <h3>${match.game}</h3>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="not-name">
+                                <h4>${match.console}</h4>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="not-name">
+                                <h4>${match['game_rules']['game_type']}</h4>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="not-name">
+                                <h4>${match.league}</h4>
+                            </div>
+                        </td>
+                    </tr>
+                            `
+                        )
+                    });
+                    page_number = page_number + 1;
+                    records_number = records_number + data['matches'].length;
+                    getRecordsShown(records_number);
+                    windowOnScroll();
+                }, 1000);
+            }
+        });
+    }
+</script>
+
+
+{% endblock %}

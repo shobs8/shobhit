@@ -1,0 +1,339 @@
+{% extends 'api/base.html' %}
+
+{% block body %}
+
+<section role="main" class="content-body tab-bg">
+
+    <!-- start: page -->
+    <section class="call-to-action call-to-action-primary call-to-action-top">
+        <div class="container container-with-sidebar">
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="iframe-wrapper">
+                        <!--<div class="row">-->
+                        <!--<div class="btn-group flex-wrap">-->
+                        <!--<button type="button" class="mb-1 mt-1 mr-1 btn btn-default dropdown-toggle"-->
+                        <!--data-toggle="dropdown" aria-expanded="false"-->
+                        <!--style="background: transparent;border: none;"><i class="fas fa-cog"-->
+                        <!--style="color:blue"></i>-->
+                        <!--Options<span class="caret"></span>-->
+                        <!--</button>-->
+                        <!--<div class="dropdown-menu" role="menu" x-placement="bottom-start"-->
+                        <!--style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 42px, 0px);">-->
+                        <!--<a class="dropdown-item text-1" href="#">Action</a>-->
+                        <!--<a class="dropdown-item text-1" href="#">Another action</a>-->
+                        <!--<a class="dropdown-item text-1" href="#">Something else here</a>-->
+                        <!--<a class="dropdown-item text-1" href="#">Separated link</a>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<button type="button" class="mb-1 mt-1 mr-1 btn btn-default"-->
+                        <!--style="background: transparent;border: none;"><i class="fas fa-edit"-->
+                        <!--style="color:blue"></i>-->
+                        <!--Redeem a Code-->
+                        <!--</button>-->
+                        <!--<button type="button" class="mb-1 mt-1 mr-1 btn btn-default"-->
+                        <!--style="background: transparent;border: none;"><i class="fab fa-empire"></i>-->
+                        <!--Launch Editor-->
+                        <!--</button>-->
+                        <!--</div>-->
+                        <iframe width="600" height="360"
+                                src="https://www.youtube.com/embed/4qdmduDJXdU?autoplay=1" frameborder="0"
+                                allowfullscreen> -->
+                        </iframe>
+                    </div>
+                </div>
+                <div class="col-lg-6 chat-cart">
+                    <div class="chat-box card">
+                        <div class="card-body">
+                            <div class="mb-2 btn-group">
+                                <div class="btn-group">
+                                    <button type="button" class="btn dropdown-toggle w-100 form-control"
+                                            data-toggle="dropdown" aria-expanded="false"> Fortnite<span
+                                            class="caret"></span></button>
+                                    <div class="dropdown-menu" role="menu" x-placement="bottom-start"
+                                         style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 42px, 0px);">
+                                        <a class="dropdown-item text-1" href="#">Action</a>
+                                        <a class="dropdown-item text-1" href="#">Another action</a>
+                                        <a class="dropdown-item text-1" href="#">Something else here</a>
+                                        <a class="dropdown-item text-1" href="#">Separated link</a>
+                                    </div>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn dropdown-toggle w-100 form-control"
+                                            data-toggle="dropdown" aria-expanded="false"> Matches<span
+                                            class="caret"></span></button>
+                                    <div class="dropdown-menu" role="menu" x-placement="bottom-start"
+                                         style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 42px, 0px);">
+                                        <a class="dropdown-item text-1" href="#">Action</a>
+                                        <a class="dropdown-item text-1" href="#">Another action</a>
+                                        <a class="dropdown-item text-1" href="#">Something else here</a>
+                                        <a class="dropdown-item text-1" href="#">Separated link</a>
+                                    </div>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn dropdown-toggle w-100 form-control"
+                                            data-toggle="dropdown" aria-expanded="false"> Friends<span
+                                            class="caret"></span></button>
+                                    <div class="dropdown-menu" role="menu" x-placement="bottom-start"
+                                         style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 42px, 0px);">
+                                        <a class="dropdown-item text-1" href="#">Action</a>
+                                        <a class="dropdown-item text-1" href="#">Another action</a>
+                                        <a class="dropdown-item text-1" href="#">Something else here</a>
+                                        <a class="dropdown-item text-1" href="#">Separated link</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-2">
+                                <div class="">
+                                    <textarea class="form-control" rows="13" data-plugin-maxlength=""
+                                              maxlength="140"></textarea>
+                                </div>
+                            </div>
+                            <div class="input-group input-group-custom mb-1">
+                                <input type="text" class="form-control">
+                                <div class="input-group-append">
+                                    <button class="btn btn-prp" type="button">Send</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="call-to-action pt-5 switch-button-section m-3">
+        <div class="row">
+            <div class="col-xl-12">
+
+                <div class="tabs tabs-dark switch-button">
+                    <ul class="nav nav-tabs nav-justified">
+                        <li class="nav-item active">
+                            <a class="nav-link show active" href="#individual" data-toggle="tab">Individual</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#teams" data-toggle="tab">Teams</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="homeMatches">
+                        <div id="individual" class="tab-pane active">
+                            <div class="row m-0">
+                                <div class="col-md-9 black-bg py-1 px-0">
+                                    <ul id="mailbox-visual" class="list-unstyled my-1">
+                                        <li class="mailbody-box head-box my-3">
+                                            <div class="row">
+                                                <div class="col-md-3 column-1 column-text text-center justify-content-center">
+                                                    <p class="m-0 text-white text-uppercase"><strong>Console</strong></p>
+                                                </div>
+                                                <div class="col-md-2 column-2 column-text">
+                                                    <p class="m-0 text-white text-uppercase text-center">
+                                                        <strong>Game</strong></p>
+                                                </div>
+                                                <div class="col-md-1 column-3 column-text">
+                                                    <p class="m-0 text-white text-uppercase text-center">
+                                                        <strong>Input</strong></p>
+                                                </div>
+                                                <div class="col-md-1 p-0 column-4 column-text">
+                                                    <p class="m-0 text-white text-uppercase text-center">
+                                                        <strong>Wager</strong></p>
+                                                </div>
+                                                <div class="col-md-1 p-0 column-5 column-text">
+                                                    <p class="m-0 text-white text-uppercase text-center">
+                                                        <strong>Match Length</strong></p>
+                                                </div>
+                                                <div class="col-md-1 p-0 column-6 column-text">
+                                                    <p class="m-0 text-white text-uppercase text-center"><strong>Game Type</strong>
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-2 p-0 column-7 column-text">
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul id="mailbox-visual" class="list-unstyled scrollable tab-content-inner">
+                                        {% for match in mymatches %}
+                                        <li class="mailbody-box">
+                                            <a href="javascript:updateMatchInfo('{{ match['id'] }}')">
+                                                <div class="row">
+                                                    <div class="col-md-3 column-1 column-text">
+                                                        <!-- <div class="checkbox-custom checkbox-text-primary ib">
+                                                          <input type="checkbox" id="mail1">
+                                                          <label for="mail1"></label>
+                                                        </div> -->
+                                                        <input class="star" type="checkbox" title="bookmark page"/>
+
+                                                        <input type="checkbox" name="cbG02" id="cbG02"
+                                                               class="lock-unlock"/>
+                                                        <label for="cbG02" class="lock-label cb0"></label>
+
+                                                        <span class="protected-user"></span>
+
+                                                        <p class="m-0 ib mail-content text-white">{{ match['console'] }}</p>
+                                                    </div>
+                                                    <div class="col-md-2 column-2 column-text">
+                                                        <p class="m-0 text-white">{{ match['game'] }}</p>
+                                                    </div>
+                                                    <div class="col-md-1 column-3 column-text justify-content-center p-0">
+                                                        <p class="m-0 text-white">{{ match['input'] }}</p>
+                                                    </div>
+                                                    <div class="col-md-1 p-0 column-4 column-text justify-content-center">
+                                                        <p class="m-0 text-white">{{ match['wagers'] }}</p>
+                                                    </div>
+                                                    <div class="col-md-1 p-0 column-5 column-text justify-content-center">
+                                                        <p class="m-0 text-white">{{ match['rules'] }}</p>
+                                                    </div>
+                                                    <div class="col-md-1 p-0 column-6 column-text justify-content-center">
+                                                        <p class="m-0 text-white">{{ match['type'] }}</p>
+                                                    </div>
+                                                    <div class="col-md-2 p-0 column-7 column-text">
+                                                        <div class="progress">
+                                                            <div class="progress-bar bg-success"
+                                                                 style="width:70%"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                    <div class="col-6 pl-0">
+                                        <div class="input-group input-group-custom mb-1">
+                                            <input type="text" class="form-control" placeholder="SEARCH">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-prp" type="button">
+                                                    <i class="fas fa-search"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3 p-1">
+                                    <div class="content-sidebar black-bg d-flex flex-column justify-content-between ml-1">
+                                        <div class="border-bottom p-1">
+                                            <img src="static/img-old/map-image.jpg" class="img-fluid mb-1"
+                                                 alt="Google Map Image"/>
+                                            <div class="row py-1">
+                                                <div class="col-md-8 pr-1">
+                                                    <p class="m-0 text-white">Current Map</p>
+                                                </div>
+                                                <div class="col-md-4 pl-1">
+                                                    <p class="m-0 text-white">Lorem Ipsum</p>
+                                                </div>
+                                            </div>
+                                            <div class="row py-1">
+                                                <div class="col-md-8 pr-1">
+                                                    <p class="m-0 text-white">Current Game Mode</p>
+                                                </div>
+                                                <div class="col-md-4 pl-1">
+                                                    <p class="m-0 text-white">AAS</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-1">
+                                            <div class="row py-1">
+                                                <div class="col-md-8 pr-1">
+                                                    <p class="m-0 text-white">Game Version</p>
+                                                </div>
+                                                <div class="col-md-4 pl-1">
+                                                    <p class="m-0 text-white">v2.2</p>
+                                                </div>
+                                            </div>
+                                            <div class="row py-1 mb-3">
+                                                <div class="col-md-8 pr-1">
+                                                    <p class="m-0 text-white">Server Type</p>
+                                                </div>
+                                                <div class="col-md-4 pl-1">
+                                                    <p class="m-0 text-white">Licensed</p>
+                                                </div>
+                                            </div>
+                                            <a class="btn btn-prp w-100" href="">Join Game</a>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="teams" class="tab-pane p-2">
+                            <p>Recent</p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias amet aperiam atque
+                                aut corporis deserunt dolor dolorem, earum eius id laborum magni molestias, nam
+                                obcaecati omnis praesentium sapiente sunt! Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Animi ea earum exercitationem natus nihil nobis quas rem repellat
+                                tempore! Dolor esse, facilis inventore itaque optio quisquam totam veniam vitae
+                                voluptatum.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- end: page -->
+</section>
+
+<!-- <div class="search-content" style="z-index:999999 !important;">
+        <div class="search-toolbar">
+            <ul class="list-unstyled nav nav-tabs nav-pills">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#everything" data-toggle="tab">Everything</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#medias" data-toggle="tab">Medias</a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content pb-5">
+            <div id="everything" class="tab-pane active">
+                <p class="total-results text-muted">Showing 1 to 10 of 47 results</p>
+
+                <ul class="list-unstyled search-results-list">
+                    <li>
+                        <p class="result-type">
+                            <span class="badge badge-primary">user</span>
+                        </p>
+                        <a href="pages-user-profile.html" class="has-thumb">
+                            <div class="result-thumb">
+                                <img src="img/!logged-user.jpg" alt="John Doe">
+                            </div>
+                            <div class="result-data">
+                                <p class="h3 title text-primary">John Doe</p>
+                                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ante nisl, sagittis nec lacus et, convallis efficitur justo. Curabitur elementum feugiat quam. Etiam ac orci iaculis, luctus nisl et, aliquet metus. Praesent congue tortor venenatis, ornare eros eu, semper orci.</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+
+                <hr class="solid mb-0">
+
+                <ul class="pagination mt-5">
+                    <li class="page-item"><a class="page-link" href="#">«</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">»</a></li>
+                </ul>
+            </div>
+            <div id="medias" class="tab-pane">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="thumb-preview">
+                            <a class="thumb-image" href="#">
+                                <img src="img/projects/project-2.jpg" class="img-fluid" alt="Project">
+                            </a>
+                        </div>
+                        <h5 class="mg-title font-weight-semibold">Blog<small>.png</small></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+</section>
+
+{% endblock %}

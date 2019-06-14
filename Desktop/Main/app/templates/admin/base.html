@@ -1,0 +1,75 @@
+<!doctype html>
+<html class="fixed">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"
+          type="text/css">
+    <link href="{{ url_for('static', filename='admin/css/bootstrap_limitless.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='admin/css/layout.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='admin/css/components.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='admin/css/colors.min.css') }}" rel="stylesheet" type="text/css">
+
+    <link href="{{ url_for('static', filename='admin/css/icons/fontawesome/styles.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='admin/css/icons/icomoon/styles.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='admin/css/animate.min.css') }}" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}" />-->
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-datepicker3.css') }}" />-->
+
+</head>
+<body>
+
+<!-- Main navbar -->
+<div class="navbar navbar-expand-md navbar-dark">
+    <div class="navbar-brand">
+        <a href="/" class="d-inline-block">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="">
+        </a>
+    </div>
+</div>
+<!-- /main navbar -->
+
+<!-- Page content -->
+<div class="page-content">
+
+    <!-- Main content -->
+    <div class="content-wrapper">
+
+        {% block body %}
+        {% endblock %}
+
+        <!-- Footer -->
+        <div class="navbar navbar-expand-lg navbar-light">
+            <div class="text-center w-100">
+				<span class="navbar-text">
+					&copy; Copyright 2019. All Rights Reserved.
+				</span>
+            </div>
+        </div>
+        <!-- /footer -->
+
+    </div>
+    <!-- /page content -->
+
+    <!-- Core JS files -->
+    <script src="{{ url_for('static', filename='admin/js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='admin/js/jquery.browser.mobile.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/popper/popper.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.js') }}"></script>
+    <!-- /core JS files -->
+
+    <!-- Theme JS files -->
+    <script src="{{ url_for('static', filename='admin/js/uniform.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='admin/js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='admin/js/login.js') }}"></script>
+    <!-- /theme JS files -->
+
+</body>
+</html>

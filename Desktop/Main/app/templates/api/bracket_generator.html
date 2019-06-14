@@ -1,0 +1,85 @@
+{% extends 'api/base.html' %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-3">
+    </div>
+
+    <div class="col-md-6">
+        <div class="card" style="margin-top:120px;">
+            <div class="card-header header-elements-inline">
+                <h5 class="card-title">Tournament Bracket Generator</h5>
+            </div>
+            <div class="card-body">
+                <form action="" method="post" class="form-horizontal">
+                    {{ form.hidden_tag() }}
+                    <fieldset>
+                            {% for message in get_flashed_messages() %}
+                                <div class="alert alert-danger">
+                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                            <div class="form-group">
+                                <div class="row">
+                                    {{ form.tournament_name.label(class='control-label col-sm-4') }}
+                                    <div class="col-sm-8">{{ form.tournament_name(class='form-control') }}</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    {{ form.tournament_type.label(class='control-label col-sm-4') }}
+                                    <div class="col-sm-8">{{ form.tournament_type(class='form-control')}}</div>
+                                </div>
+                            </div>
+                            <div class="form-group" style="display:none;">
+                                <div class="row">
+                                    <div class="col-sm-4"></div>
+                                    {{ form.hold_third_place_match(class='form-control', style="max-width: 15px; margin-left:15px;")}}
+                                    <div class="col-sm-7" style="padding:7px 5px;">
+                                    {{ form.hold_third_place_match.label }}</div>
+                                </div>
+                                
+                                
+                            </div>
+                            <div class="form-group" style="display:none;">
+                                <div class="row">
+                                    <div class="col-sm-4"></div>
+                                    <div class="col-sm-4" style="padding-right:5px;">{{ form.rr_iteration.label }}</div>
+                                    <div class="col-sm-2">{{ form.rr_iteration(class='form-control', style='padding:5px;')}}</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    {{ form.bracket_size.label(class='control-label col-sm-4') }}
+                                    <div class="col-sm-8">{{ form.bracket_size(class='form-control')}}</div>
+                                </div>
+                            </div>
+                            <div class="form-group" style="display:none;">
+                                <div class="row">
+                                    {{ form.number_of_participants.label(class='control-label col-sm-4') }}
+                                    <div class="col-sm-2">{{ form.number_of_participants(class='form-control', type='number', style="padding:10px;")}}</div>
+                                </div>
+                            </div>
+                            <div class="form-group" style="display:none;">
+                                <div class="row">
+                                    {{ form.participants_team.label(class='control-label col-sm-4') }}
+                                    <div class="col-sm-7">{{ form.participants_team(class='form-control', rows=5)}}</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-4"></div>
+                                    <div class="col-sm-4">{{ form.submit(class='btn btn-warning') }}</div>
+                                </div>
+                            </div>
+                        </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+    </div>
+</div>
+{% endblock %}
